@@ -81,20 +81,19 @@ const Sidebar = ({ isCollapsed, isHidden = false, isMobile = false, onToggle }: 
       <motion.div
         initial={false}
         animate={{ 
-          width: isHidden ? 0 : (isCollapsed ? 80 : (isMobile ? '100vw' : 280)),
-          x: isHidden ? (isMobile ? -100 : 0) : 0,
-          transition: { type: "spring", damping: 30, stiffness: 300 }
+          x: isHidden ? (isMobile ? '-100%' : isCollapsed ? '-200px' : '-280px') : '0%',
+          transition: { type: "spring", damping: 25, stiffness: 200 }
         }}
-        className="fixed left-0 top-0 h-full bg-white z-50 flex flex-col overflow-hidden"
+        className={`fixed left-0 top-0 h-full bg-white z-50 flex flex-col overflow-hidden ${
+          isMobile ? 'w-screen' : (isCollapsed ? 'w-20' : 'w-72')
+        }`}
         style={{ 
-          display: isHidden && !isMobile ? 'none' : 'flex',
-          boxShadow: isMobile ? '0 8px 32px rgba(0, 0, 0, 0.15)' : 'none',
-          width: isClient && isMobile && !isHidden ? '100vw' : undefined
+          boxShadow: isMobile && !isHidden ? '0 8px 32px rgba(0, 0, 0, 0.15)' : 'none',
         }}
       >
       {/* Header */}
       <div className="flex items-center justify-between p-6 min-h-[80px]">
-        {!isCollapsed && (
+        {(!isCollapsed || isMobile) && (
           <Link 
             href="/" 
             className="flex items-center space-x-3"
@@ -103,17 +102,28 @@ const Sidebar = ({ isCollapsed, isHidden = false, isMobile = false, onToggle }: 
             <span className="font-semibold text-lg text-gray-900">SirkupAI</span>
           </Link>
         )}
-        {isCollapsed ? (
-          <div className="flex flex-col items-center space-y-3 mx-auto">
+        {!isMobile ? (
+          isCollapsed ? (
+            <div className="flex flex-col items-center space-y-3 mx-auto">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={onToggle}
+                className="h-6 w-6 text-gray-400 hover:text-gray-700 hover:bg-gray-50 rounded-lg transition-all duration-200"
+              >
+                <ChevronRight className="h-3 w-3" />
+              </Button>
+            </div>
+          ) : (
             <Button
               variant="ghost"
               size="icon"
               onClick={onToggle}
-              className="h-6 w-6 text-gray-400 hover:text-gray-700 hover:bg-gray-50 rounded-lg transition-all duration-200"
+              className="h-8 w-8 text-gray-400 hover:text-gray-700 hover:bg-gray-50 rounded-lg transition-all duration-200"
             >
-              <ChevronRight className="h-3 w-3" />
+              <ChevronLeft className="h-4 w-4" />
             </Button>
-          </div>
+          )
         ) : (
           <Button
             variant="ghost"

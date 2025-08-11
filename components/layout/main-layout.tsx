@@ -51,7 +51,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
 
   const getMainMargin = () => {
     if (isClient && isMobile) {
-      return sidebarHidden ? '0' : '280px'
+      return '0' // On mobile, sidebar overlays so no margin needed
     }
     return sidebarCollapsed ? '80px' : '280px'
   }
