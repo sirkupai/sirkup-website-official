@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
-import { ArrowRight, FileText, MessageSquare, GraduationCap, Building2, Camera, Heart, Users, Briefcase } from 'lucide-react'
+import { ArrowRight, FileText, MessageSquare, GraduationCap, Building2, Camera, Heart, Users, Briefcase, Target, Eye, Clock, MapPin, Globe, CheckCircle, Star, Quote } from 'lucide-react'
 import Image from 'next/image'
 
 export default function Home() {
@@ -80,7 +80,6 @@ export default function Home() {
         </motion.div>
       </section>
 
-
       {/* Image Section */}
       <section className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 max-w-6xl mx-auto">
         <div className="relative rounded-lg sm:rounded-2xl h-64 sm:h-80 lg:h-96 overflow-hidden">
@@ -102,13 +101,13 @@ export default function Home() {
 
       {/* Three Flagship Systems */}
       <section className="px-4 sm:px-6 lg:px-8 py-16 sm:py-24 max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="space-y-16"
-        >
-          <div className="text-center space-y-8">
+        <div className="space-y-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center space-y-8"
+          >
             <div className="space-y-4">
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-[0.9] text-balance">
                 Production<br />
@@ -118,7 +117,7 @@ export default function Home() {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Each system is built with safeguards, observability, and real-world constraints in mind.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {systems.map((system, index) => (
@@ -151,7 +150,7 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Proof Strip */}
@@ -161,8 +160,8 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center"
           >
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center">
             <div>
               <div className="text-4xl font-bold text-gray-900 mb-2">8h → 30m</div>
               <div className="text-gray-600 font-medium">Content asset creation time</div>
@@ -178,27 +177,30 @@ export default function Home() {
               <div className="text-gray-600 font-medium">Real Estate, Media, Civic, Education</div>
               <div className="text-sm text-gray-600 mt-1">Production deployments</div>
             </div>
+            </div>
           </motion.div>
         </div>
       </section>
 
 
 
-      {/* Big Bold Text - No Black Boxes (Single Statement) */}
-      <section className="px-4 sm:px-6 lg:px-8 py-32 sm:py-40">
+      {/* Big Bold Text - Build Measure Learn */}
+      <section className="px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1.0 }}
+            transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h2 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black leading-[0.8] tracking-tighter text-gray-900">
-              No black boxes.
+            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[0.85] tracking-tight">
+              <span className="block text-gray-900">Build</span>
+              <span className="block text-gray-700">—measure—</span>
+              <span className="block text-gray-500">learn</span>
             </h2>
-            <p className="text-2xl sm:text-3xl text-gray-500 mt-12 font-light max-w-5xl mx-auto leading-relaxed">
-              Just tested workflows that shorten cycles and improve decisions.
+            <p className="text-lg sm:text-xl text-gray-600 mt-8 max-w-3xl mx-auto">
+              Short cycles beat long plans. Every initiative has a hypothesis, metric, and review cadence.
             </p>
           </motion.div>
         </div>
@@ -213,7 +215,7 @@ export default function Home() {
           className="space-y-16"
         >
           <div className="text-center space-y-8">
-            <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-[0.9] text-balance">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-[0.9] text-balance">
               Built for Your<br />
               Industry
             </h2>
@@ -248,6 +250,228 @@ export default function Home() {
         </motion.div>
       </section>
 
+      {/* Big Bold Text - Rigor Over Rhetoric */}
+      <section className="px-4 sm:px-6 lg:px-8 py-24 sm:py-32 bg-gray-100">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.85] tracking-tight">
+              <span className="block text-gray-900">Rigor</span>
+              <span className="block text-gray-700">over</span>
+              <span className="block text-gray-500">rhetoric</span>
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-600 mt-8 max-w-4xl mx-auto">
+              We privilege tested results over narratives. Evidence, pilots, and post-mortems before shipping broadly.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Company Story */}
+      <section className="px-4 sm:px-6 lg:px-8 py-16 sm:py-24 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+              R&D-First Studio
+            </h2>
+            <div className="space-y-4 text-lg text-gray-600 leading-relaxed">
+              <p>
+                We built an operator-led, R&D-first studio to close the gap between promising models and production systems. 
+                Our approach is grounded in real-world testing and measurable outcomes.
+              </p>
+              <p>
+                Our principles are simple: <span className="font-semibold text-gray-900">Build–measure–learn</span>. 
+                Prefer open experimentation over slideware.
+              </p>
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <div className="bg-gray-50 rounded-2xl p-8">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Our Operating Principles</h3>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-gray-900 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <div className="font-medium text-gray-900">Autonomy with accountability</div>
+                    <div className="text-sm text-gray-600">Doers have agency and own results</div>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-gray-700 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <div className="font-medium text-gray-900">Responsible AI</div>
+                    <div className="text-sm text-gray-600">Safety, privacy, and human oversight are non-negotiable</div>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-gray-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <div className="font-medium text-gray-900">Customer outcomes</div>
+                    <div className="text-sm text-gray-600">Value = delivered change, not features</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Mission & Vision */}
+      <section className="px-4 sm:px-6 lg:px-8 py-16 sm:py-24 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Our Mission & Vision</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Democratizing AI for sustainable human development and progress across Pakistan and the UAE
+            </p>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              <Card className="h-full border-gray-200">
+                <CardContent className="p-8">
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mr-4">
+                      <Target className="h-6 w-6 text-gray-700" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900">Mission</h3>
+                  </div>
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    "Democratizing AI for Sustainable Human Development and Progress."
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <Card className="h-full border-gray-200">
+                <CardContent className="p-8">
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mr-4">
+                      <Eye className="h-6 w-6 text-gray-700" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900">Vision</h3>
+                  </div>
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    Accessible, safe, production-grade AI that advances capability and social progress 
+                    across Pakistan and the UAE, with patterns that travel globally.
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Global Presence */}
+      <section className="px-4 sm:px-6 lg:px-8 py-16 sm:py-24 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Global Operations</h2>
+            <p className="text-xl text-gray-600">
+              On-site teams in Islamabad and Dubai with legal registration in Pakistan and the UAE
+            </p>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <Card className="h-full border-gray-200">
+                <CardContent className="p-8">
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mr-4">
+                      <Building2 className="h-6 w-6 text-gray-700" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-900">Islamabad, Pakistan</h3>
+                      <p className="text-gray-600">On-site Operations</p>
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-center text-gray-600">
+                      <Clock className="h-4 w-4 mr-2" />
+                      <span>10:30AM–6:30PM PKT</span>
+                    </div>
+                    <div className="flex items-center text-gray-600">
+                      <MapPin className="h-4 w-4 mr-2" />
+                      <span>PKT (UTC+5)</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <Card className="h-full border-gray-200">
+                <CardContent className="p-8">
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mr-4">
+                      <Globe className="h-6 w-6 text-gray-700" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-900">Dubai, UAE</h3>
+                      <p className="text-gray-600">On-site Operations</p>
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-center text-gray-600">
+                      <Clock className="h-4 w-4 mr-2" />
+                      <span>9:30AM–5:30PM GST</span>
+                    </div>
+                    <div className="flex items-center text-gray-600">
+                      <MapPin className="h-4 w-4 mr-2" />
+                      <span>GST (UTC+4)</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Image Section 2 */}
       <section className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 max-w-6xl mx-auto">
         <div className="relative rounded-2xl h-96 overflow-hidden">
@@ -268,6 +492,263 @@ export default function Home() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Client Success & Testimonials */}
+      <section className="px-4 sm:px-6 lg:px-8 py-16 sm:py-24 max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">What Clients Say</h2>
+          <p className="text-xl text-gray-600">
+            We collaborate with teams who value practical outcomes
+          </p>
+        </motion.div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+          >
+            <Card className="h-full border-gray-200">
+              <CardContent className="p-8">
+                <Quote className="h-8 w-8 text-gray-400 mb-4" />
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  "They cut through noise and built a workflow our team actually uses in production."
+                </p>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center mr-3">
+                    <Building2 className="h-5 w-5 text-gray-600" />
+                  </div>
+                  <div>
+                    <div className="font-medium text-gray-900">Director</div>
+                    <div className="text-sm text-gray-600">Real Estate</div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <Card className="h-full border-gray-200">
+              <CardContent className="p-8">
+                <Quote className="h-8 w-8 text-gray-400 mb-4" />
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  "Our content reviews are tighter and faster, with clearer handoffs."
+                </p>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center mr-3">
+                    <Camera className="h-5 w-5 text-gray-600" />
+                  </div>
+                  <div>
+                    <div className="font-medium text-gray-900">Head of Content</div>
+                    <div className="text-sm text-gray-600">Media Studio</div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
+            <Card className="h-full border-gray-200">
+              <CardContent className="p-8">
+                <Quote className="h-8 w-8 text-gray-400 mb-4" />
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  "They understand sensitive contexts and design with human oversight from the start."
+                </p>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center mr-3">
+                    <Heart className="h-5 w-5 text-gray-600" />
+                  </div>
+                  <div>
+                    <div className="font-medium text-gray-900">Program Lead</div>
+                    <div className="text-sm text-gray-600">NGO</div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </div>
+        
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <div className="bg-gray-50 rounded-2xl p-8">
+            <h3 className="text-xl font-semibold text-gray-900 mb-4">Our Partners</h3>
+            <div className="flex flex-wrap justify-center items-center gap-8 text-gray-600">
+              <span className="font-medium">NestHive</span>
+              <span className="font-medium">VoicesofPak</span>
+              <span className="font-medium">Bytes for All (B4A)</span>
+              <span className="font-medium">Frische</span>
+              <span className="font-medium">Carzone</span>
+            </div>
+            <p className="text-gray-600 mt-4">
+              If our approach fits your goals, we would welcome a focused pilot.
+            </p>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Why Choose SirkupAI */}
+      <section className="px-4 sm:px-6 lg:px-8 py-16 sm:py-24 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Why Choose SirkupAI</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              We're not a generic dev shop. We're a systems studio that ships applied AI built to withstand production realities.
+            </p>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              <div className="text-center">
+                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm">
+                  <CheckCircle className="h-8 w-8 text-gray-700" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Production-First</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Every system is built with safeguards, observability, and real-world constraints in mind from day one.
+                </p>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <div className="text-center">
+                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm">
+                  <Users className="h-8 w-8 text-gray-700" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Operator-Led</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Built by operators who understand edge cases, load patterns, and the realities of running systems at scale.
+                </p>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+            >
+              <div className="text-center">
+                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm">
+                  <Star className="h-8 w-8 text-gray-700" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Measurable Impact</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  We measure what matters: 8h → 30m content creation, live testing with partners, real industry deployments.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Process & Approach */}
+      <section className="px-4 sm:px-6 lg:px-8 py-16 sm:py-24 max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Our Approach</h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Start with a discovery call, move to focused pilots, then scale with comprehensive support
+          </p>
+        </motion.div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-center"
+          >
+            <div className="w-12 h-12 bg-gray-900 text-white rounded-xl flex items-center justify-center mx-auto mb-6 font-bold">
+              1
+            </div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-4">Discovery Call</h3>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              We understand your needs and recommend the best approach. Can begin with a pilot program or workshop.
+            </p>
+            <div className="text-sm text-gray-500">
+              Response time: 1–2 business days
+            </div>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-center"
+          >
+            <div className="w-12 h-12 bg-gray-700 text-white rounded-xl flex items-center justify-center mx-auto mb-6 font-bold">
+              2
+            </div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-4">Pilot Program</h3>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              Focused pilots typically take 2-4 weeks. We build, measure, and learn with real users and real data.
+            </p>
+            <div className="text-sm text-gray-500">
+              Timeline: 2-4 weeks for pilots
+            </div>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="text-center"
+          >
+            <div className="w-12 h-12 bg-gray-500 text-white rounded-xl flex items-center justify-center mx-auto mb-6 font-bold">
+              3
+            </div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-4">Scale & Support</h3>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              Full implementations with comprehensive training, ongoing support, and SirkupAI Academy access.
+            </p>
+            <div className="text-sm text-gray-500">
+              Timeline: 6-12 weeks for full implementation
+            </div>
+          </motion.div>
         </div>
       </section>
 
