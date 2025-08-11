@@ -50,17 +50,15 @@ export default function Home() {
           className="space-y-12"
         >
           <div className="space-y-8">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-gray-900 leading-[0.9] text-balance">
-              Democratizing AI for<br className="hidden sm:block" />
-              <span className="text-gray-700">Sustainable Human</span><br className="hidden sm:block" />
-              Development and Progress
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
+              Democratizing AI for{' '}
+              <span className="text-gray-700">Sustainable Human{' '}
+              Development and Progress</span>
             </h1>
             
             <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 max-w-3xl leading-relaxed">
               We build applied AI systems that hold up in production. Operator-led, R&D-first, 
               and focused on measurable outcomes across Pakistan and the UAE.
-              <br className="hidden sm:block" />
-              <span className="font-semibold text-gray-900">Education. Automation. Impact.</span>
             </p>
           </div>
 
@@ -68,8 +66,8 @@ export default function Home() {
             <Button size="lg" className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-base bg-black hover:bg-gray-800 text-white">
               <a href="/solutions" className="flex items-center justify-center">
                 Explore Solutions
+                <ArrowRight className="ml-2 h-5 w-5" />
               </a>
-              <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button variant="outline" size="lg" className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-base border-gray-300 hover:bg-gray-50 bg-white text-gray-900">
               <a href="/about" className="flex items-center justify-center">
@@ -753,7 +751,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-4 sm:px-6 lg:px-8 py-16 sm:py-24 bg-black text-white">
+      <section className="px-4 sm:px-6 lg:px-8 py-16 sm:py-24 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -762,24 +760,24 @@ export default function Home() {
             className="space-y-12"
           >
             <div className="space-y-8">
-              <h2 className="text-4xl lg:text-6xl font-bold leading-[0.9] text-balance">
+              <h2 className="text-4xl lg:text-6xl font-bold leading-[0.9] text-balance text-gray-900">
                 Ready to Build<br />
                 the Future?
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl">
+              <p className="text-xl text-gray-600 max-w-3xl">
                 Whether you're looking to implement AI systems or join our team, 
                 we'd love to hear from you.
               </p>
             </div>
             
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
-              <Button size="lg" className="w-full sm:w-auto bg-white text-black hover:bg-gray-100 px-6 sm:px-8 py-3 sm:py-4 text-base">
+              <Button size="lg" className="w-full sm:w-auto bg-black text-white hover:bg-gray-800 px-6 sm:px-8 py-3 sm:py-4 text-base">
                 <a href="/contact-sales" className="flex items-center justify-center">
                   Start a Pilot
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button variant="outline" size="lg" className="w-full sm:w-auto border border-white text-white hover:bg-white hover:text-black px-6 sm:px-8 py-3 sm:py-4 text-base bg-transparent">
+              <Button variant="outline" size="lg" className="w-full sm:w-auto border-gray-300 text-gray-900 hover:bg-gray-100 px-6 sm:px-8 py-3 sm:py-4 text-base">
                 <a href="/careers" className="flex items-center justify-center">
                   View Open Roles
                 </a>

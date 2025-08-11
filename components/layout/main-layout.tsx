@@ -21,7 +21,7 @@ interface MainLayoutProps {
 const MainLayout = ({ children }: MainLayoutProps) => {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
-  const [sidebarHidden, setSidebarHidden] = useState(false)
+  const [sidebarHidden, setSidebarHidden] = useState(true)
   const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
@@ -31,11 +31,9 @@ const MainLayout = ({ children }: MainLayoutProps) => {
     const checkMobile = () => {
       const mobile = window.innerWidth < 768
       setIsMobile(mobile)
-      if (mobile) {
-        setSidebarHidden(true)
-      } else {
-        setSidebarHidden(false)
-      }
+      // On mobile, always start with sidebar hidden
+      // On desktop, show sidebar by default
+      setSidebarHidden(mobile)
     }
     
     checkMobile()
@@ -68,7 +66,11 @@ const MainLayout = ({ children }: MainLayoutProps) => {
         isMobile={isClient ? isMobile : false}
         onToggle={handleSidebarToggle} 
       />
-      <Header isMobile={isClient ? isMobile : false} />
+      <Header 
+        isMobile={isClient ? isMobile : false} 
+        sidebarHidden={sidebarHidden}
+        onMenuClick={handleSidebarToggle}
+      />
       
       <main 
         className="transition-all duration-300 ease-in-out pt-16 px-4 sm:px-6 md:px-8"
