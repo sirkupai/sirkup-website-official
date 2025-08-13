@@ -4,17 +4,6 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
-import { 
-  Home, 
-  Building2, 
-  Target, 
-  Briefcase, 
-  Users, 
-  BookOpen,
-  Mail,
-  ChevronLeft,
-  ChevronRight
-} from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { OpenAIButton } from '@/components/ui/openai-button'
 import { cn } from '@/lib/utils'
@@ -28,13 +17,7 @@ const Sidebar = ({ isCollapsed, onToggle }: SidebarProps) => {
   const pathname = usePathname()
 
   const navigation = [
-    { name: 'Home', href: '/', icon: Home },
-    { name: 'About', href: '/about', icon: Building2 },
-    { name: 'Solutions', href: '/solutions', icon: Target },
-    { name: 'Careers', href: '/careers', icon: Briefcase },
-    { name: 'Team', href: '/team', icon: Users },
-    { name: 'Resources', href: '/resources', icon: BookOpen },
-    { name: 'Contact', href: '/contact', icon: Mail },
+    { name: 'Home', href: '/', icon: '🏠' },
   ]
 
   return (
@@ -62,7 +45,7 @@ const Sidebar = ({ isCollapsed, onToggle }: SidebarProps) => {
               onClick={onToggle}
               className="h-6 w-6 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-lg shadow-sm border border-gray-200 transition-all duration-200"
             >
-              <ChevronRight className="h-3 w-3" />
+              <span className="h-3 w-3">›</span>
             </Button>
           </div>
         ) : (
@@ -72,7 +55,7 @@ const Sidebar = ({ isCollapsed, onToggle }: SidebarProps) => {
             onClick={onToggle}
             className="h-8 w-8 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-lg shadow-sm border border-gray-200 transition-all duration-200"
           >
-            <ChevronLeft className="h-4 w-4" />
+            <span className="h-4 w-4">‹</span>
           </Button>
         )}
       </div>
@@ -93,10 +76,10 @@ const Sidebar = ({ isCollapsed, onToggle }: SidebarProps) => {
                 isCollapsed && "justify-center"
               )}
             >
-              <item.icon className={cn(
-                "h-5 w-5 flex-shrink-0",
-                isActive ? "text-gray-900" : "text-gray-400 group-hover:text-gray-600"
-              )} />
+              <span className={cn(
+                "text-xl flex-shrink-0",
+                isActive ? "opacity-100" : "opacity-60 group-hover:opacity-80"
+              )}>{item.icon}</span>
               {!isCollapsed && <span>{item.name}</span>}
             </Link>
           )
@@ -119,7 +102,7 @@ const Sidebar = ({ isCollapsed, onToggle }: SidebarProps) => {
           onClick={onToggle}
           className="h-8 w-8 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-lg shadow-sm border border-gray-200 transition-all duration-200 mx-auto"
         >
-          <ChevronRight className="h-4 w-4" />
+          <span className="h-4 w-4">›</span>
         </Button>
       )}
     </motion.div>

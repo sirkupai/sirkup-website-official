@@ -1,7 +1,6 @@
 "use client"
 
 import { lazy, Suspense, ComponentType } from 'react'
-import { Loader2 } from 'lucide-react'
 
 interface LazyComponentProps {
   loader: () => Promise<{ default: ComponentType<any> }>
@@ -12,7 +11,7 @@ interface LazyComponentProps {
 function LoadingFallback() {
   return (
     <div className="flex items-center justify-center p-8">
-      <Loader2 className="h-6 w-6 animate-spin text-gray-400" />
+      <span className="text-2xl animate-spin text-gray-400">⏳</span>
     </div>
   )
 }

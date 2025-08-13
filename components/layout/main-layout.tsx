@@ -21,7 +21,7 @@ interface MainLayoutProps {
 const MainLayout = ({ children }: MainLayoutProps) => {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
-  const [sidebarHidden, setSidebarHidden] = useState(true)
+  const [sidebarHidden, setSidebarHidden] = useState(false)
   const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
@@ -32,8 +32,13 @@ const MainLayout = ({ children }: MainLayoutProps) => {
       const mobile = window.innerWidth < 768
       setIsMobile(mobile)
       // On mobile, always start with sidebar hidden
-      // On desktop, show sidebar by default
-      setSidebarHidden(mobile)
+      // On desktop, start with sidebar visible but can be hidden
+      if (mobile) {
+        setSidebarHidden(true)
+        setSidebarCollapsed(false) // On mobile, never collapsed, just hidden/shown
+      } else {
+        setSidebarHidden(false) // Desktop starts with sidebar visible
+      }
     }
     
     checkMobile()
@@ -43,29 +48,52 @@ const MainLayout = ({ children }: MainLayoutProps) => {
 
   const handleSidebarToggle = () => {
     if (isMobile) {
+      // On mobile, toggle between fully hidden and fully visible
       setSidebarHidden(!sidebarHidden)
     } else {
+      // On desktop, toggle between collapsed and expanded
       setSidebarCollapsed(!sidebarCollapsed)
+      // Never hide completely on desktop
+      setSidebarHidden(false)
     }
   }
 
   const getMainMargin = () => {
-    if (isClient && isMobile) {
+    if (!isClient) return '0'
+    
+    if (sidebarHidden) {
+      return '0' // Sidebar is completely hidden
+    }
+    
+    if (isMobile) {
       return '0' // On mobile, sidebar overlays so no margin needed
     }
-    return sidebarCollapsed ? '80px' : '280px'
+    
+    // On desktop - when sidebar is collapsed it should center content
+    return sidebarCollapsed ? '0' : '200px'
+  }
+
+  const getMainPadding = () => {
+    if (!isClient) return '0'
+    
+    // Always return 0 - we'll handle centering in the content itself
+    return '0'
   }
 
   return (
     <div className="min-h-screen bg-white">
       <RoutePreloader />
       <WebVitals />
-      <Sidebar 
-        isCollapsed={sidebarCollapsed} 
-        isHidden={sidebarHidden}
-        isMobile={isClient ? isMobile : false}
-        onToggle={handleSidebarToggle} 
-      />
+      
+      {isClient && (
+        <Sidebar 
+          isCollapsed={sidebarCollapsed} 
+          isHidden={sidebarHidden}
+          isMobile={isMobile}
+          onToggle={handleSidebarToggle} 
+        />
+      )}
+      
       <Header 
         isMobile={isClient ? isMobile : false} 
         sidebarHidden={sidebarHidden}
@@ -73,12 +101,15 @@ const MainLayout = ({ children }: MainLayoutProps) => {
       />
       
       <main 
-        className="transition-all duration-300 ease-in-out pt-16 px-4 sm:px-6 md:px-8"
+        className="transition-all duration-300 ease-in-out pt-16"
         style={{ 
           marginLeft: getMainMargin(),
+          transition: 'margin-left 0.3s ease-in-out'
         }}
       >
-        {children}
+        <div className="w-full">
+          {children}
+        </div>
         <Footer />
       </main>
     </div>
