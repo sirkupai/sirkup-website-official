@@ -46,7 +46,7 @@ const solutions: Array<{
     id: 'startups',
     title: 'Startups',
     description: 'Grow business and get products to market faster with the help of AI.',
-    image: '/startups-solution.png'
+    image: '/images/startups-main.jpg'
   }
 ]
 

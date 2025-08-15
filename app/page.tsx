@@ -162,7 +162,7 @@ export default function Home() {
                         alt="NestHive AI"
                         width={160}
                         height={40}
-                        className="object-contain brightness-0 dark:brightness-100 dark:invert"
+                        className="object-contain brightness-0 dark:brightness-0 dark:invert"
                       />
                     </div>
                     <div className="bg-white dark:bg-zinc-800 rounded-lg shadow-sm dark:shadow-zinc-900 p-4">

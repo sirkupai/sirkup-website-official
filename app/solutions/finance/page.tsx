@@ -47,11 +47,6 @@ export default function FinancePage() {
       title: 'Intelligent document processing',
       description: 'Extract and analyze data from any financial document.',
       image: '/images/finance-subpage (3).jpg'
-    },
-    {
-      title: 'Real-time compliance monitoring',
-      description: 'Stay ahead of regulations with automated checks.',
-      image: '/images/finance-subpage (4).jpg'
     }
   ]
 
@@ -103,16 +98,17 @@ export default function FinancePage() {
       {/* Features Grid */}
       <section ref={addSectionRef} className="py-20 px-4 md:px-8 opacity-0">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {features.map((feature, index) => (
               <div key={index} className="text-center">
-                <div className="bg-gray-50 dark:bg-zinc-900 rounded-2xl mb-4 h-64 relative overflow-hidden">
+                <div className="bg-gray-50 dark:bg-zinc-900 rounded-2xl mb-4 p-2">
                   {feature.image && (
                     <Image
                       src={feature.image}
                       alt={feature.title}
-                      fill
-                      className="object-cover"
+                      width={600}
+                      height={400}
+                      className="w-full h-auto object-contain rounded-xl"
                     />
                   )}
                 </div>

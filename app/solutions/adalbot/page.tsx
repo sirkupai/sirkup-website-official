@@ -69,8 +69,8 @@ export default function AdalBotPage() {
         </section>
 
         {/* Title and Product Info */}
-        <section ref={addSectionRef} className="py-6 opacity-0">
-          <div className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400 mb-4">
+        <section ref={addSectionRef} className="py-6 opacity-0 text-center">
+          <div className="flex items-center justify-center gap-3 text-sm text-gray-600 dark:text-gray-400 mb-4">
             <span>Healthcare AI</span>
             <span>•</span>
             <span>Updated August 2024</span>
@@ -81,21 +81,25 @@ export default function AdalBotPage() {
         </section>
 
         {/* Main Heading and Description */}
-        <section ref={addSectionRef} className="py-8 md:py-12 opacity-0">
-          <div className="max-w-4xl">
+        <section ref={addSectionRef} className="py-8 md:py-12 opacity-0 text-center">
+          <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-normal text-black dark:text-white mb-6 leading-tight">
               AI-powered support tool for trauma and abuse survivors via WhatsApp
             </h2>
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
               Providing compassionate, accessible, and confidential assistance when it's needed most.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-100 px-8 py-3 rounded-full">
-                Get started →
-              </Button>
-              <Button variant="outline" className="border-gray-300 dark:border-gray-700 text-black dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 px-8 py-3 rounded-full">
-                Contact sales
-              </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact">
+                <Button className="bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-100 px-8 py-3 rounded-full">
+                  Get started →
+                </Button>
+              </Link>
+              <Link href="/contact">
+                <Button variant="outline" className="border-gray-300 dark:border-gray-700 text-black dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 px-8 py-3 rounded-full">
+                  Contact sales
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
@@ -120,7 +124,7 @@ export default function AdalBotPage() {
 
         {/* Description Section */}
         <section ref={addSectionRef} className="py-12 md:py-20 opacity-0">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl mx-auto text-center">
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
               AdalBot represents a breakthrough in crisis support technology, delivering empathetic AI assistance through the familiar WhatsApp platform. Our advanced conversational AI is specifically trained to recognize signs of distress, provide immediate emotional support, and connect users with appropriate resources.
             </p>
@@ -288,12 +292,16 @@ export default function AdalBotPage() {
               Join organizations already using AdalBot to make mental health support more accessible.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-100 px-8 py-3 rounded-full">
-                Learn more
-              </Button>
-              <Button variant="outline" className="border-gray-300 dark:border-gray-700 text-black dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 px-8 py-3 rounded-full">
-                Contact us
-              </Button>
+              <Link href="/solutions">
+                <Button className="bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-100 px-8 py-3 rounded-full">
+                  Learn more
+                </Button>
+              </Link>
+              <Link href="/contact">
+                <Button variant="outline" className="border-gray-300 dark:border-gray-700 text-black dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 px-8 py-3 rounded-full">
+                  Contact us
+                </Button>
+              </Link>
             </div>
           </div>
         </section>

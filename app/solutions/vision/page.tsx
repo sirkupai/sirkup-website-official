@@ -122,7 +122,7 @@ export default function VisionPage() {
         <section ref={addSectionRef} className="py-12 md:py-20 opacity-0 text-center">
           <div className="max-w-4xl mx-auto">
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-8 text-center">
-              Vision revolutionizes the creative process by combining cutting-edge AI with intuitive design tools. Our platform understands context, emotion, and narrative to generate images that don't just look beautiful—they communicate your exact vision and tell compelling stories.
+              Vision revolutionizes the creative process by combining cutting-edge AI with intuitive design tools. Our platform understands context, emotion, and narrative to generate images that don't just look beautiful, they communicate your exact vision and tell compelling stories.
             </p>
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-center">
               Whether you're creating marketing materials, storytelling visuals, or artistic expressions, Vision transforms your ideas into powerful imagery that resonates with your audience and amplifies your message.
@@ -134,7 +134,7 @@ export default function VisionPage() {
         <section ref={addSectionRef} className="py-12 md:py-20 border-y border-gray-200 dark:border-zinc-800 opacity-0">
           <div className="max-w-3xl mx-auto text-center">
             <blockquote className="text-xl md:text-2xl font-light text-black dark:text-white italic mb-6">
-              "Vision has transformed how we approach visual storytelling. The AI doesn't just generate images—it understands the narrative we want to convey and brings it to life in ways we never imagined."
+              "Vision has transformed how we approach visual storytelling. The AI doesn't just generate images, it understands the narrative we want to convey and brings it to life in ways we never imagined."
             </blockquote>
             <cite className="text-sm text-gray-600 dark:text-gray-400">
               Sarah Chen, Creative Director at Narrative Studios

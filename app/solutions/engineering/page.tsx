@@ -41,17 +41,12 @@ export default function EngineeringPage() {
     {
       title: 'Automated testing and quality assurance',
       description: 'Maintain high code quality with continuous testing.',
-      image: null
+      image: '/images/engineering-subpage (2).jpg'
     },
     {
       title: 'Smart documentation generation',
       description: 'Keep technical docs always up-to-date.',
-      image: null
-    },
-    {
-      title: 'Performance optimization and monitoring',
-      description: 'Real-time insights into system performance.',
-      image: null
+      image: '/images/engineering-subpage (3).jpg'
     }
   ]
 
@@ -82,19 +77,20 @@ export default function EngineeringPage() {
       {/* Features Grid */}
       <section ref={addSectionRef} className="py-20 px-4 md:px-8 opacity-0">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {features.map((feature, index) => (
               <div key={index} className="text-center">
-                <div className="bg-gray-50 dark:bg-zinc-900 rounded-2xl mb-4 h-64 relative overflow-hidden">
+                <div className="bg-gray-50 dark:bg-zinc-900 rounded-2xl mb-4 p-2 min-h-[200px]">
                   {feature.image ? (
                     <Image
                       src={feature.image}
                       alt={feature.title}
-                      fill
-                      className="object-cover"
+                      width={600}
+                      height={400}
+                      className="w-full h-auto object-contain rounded-xl"
                     />
                   ) : (
-                    <div className="absolute inset-0 flex items-center justify-center text-gray-400 dark:text-gray-600">
+                    <div className="flex items-center justify-center h-[200px] text-gray-400 dark:text-gray-600">
                       <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                       </svg>

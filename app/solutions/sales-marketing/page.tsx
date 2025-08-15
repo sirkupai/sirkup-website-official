@@ -47,11 +47,6 @@ export default function SalesMarketingPage() {
       title: 'AI-powered campaign optimization',
       description: 'Data-driven insights for better targeting and engagement.',
       image: '/images/sales-and-marketing-subpages (3).jpeg'
-    },
-    {
-      title: 'Automated reporting and analytics',
-      description: 'Real-time dashboards with actionable insights.',
-      image: '/images/sales-and-marketing-subpages (4).jpeg'
     }
   ]
 
@@ -100,17 +95,24 @@ export default function SalesMarketingPage() {
       {/* Features Grid */}
       <section ref={addSectionRef} className="py-20 px-4 md:px-8 opacity-0">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {features.map((feature, index) => (
               <div key={index} className="text-center">
-                <div className="bg-gray-50 dark:bg-zinc-900 rounded-2xl mb-4 h-64 relative overflow-hidden">
-                  {feature.image && (
+                <div className="bg-gray-50 dark:bg-zinc-900 rounded-2xl mb-4 p-2 min-h-[200px]">
+                  {feature.image ? (
                     <Image
                       src={feature.image}
                       alt={feature.title}
-                      fill
-                      className="object-cover"
+                      width={600}
+                      height={400}
+                      className="w-full h-auto object-contain rounded-xl"
                     />
+                  ) : (
+                    <div className="flex items-center justify-center h-[200px] text-gray-400 dark:text-gray-600">
+                      <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M12 8c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z" />
+                      </svg>
+                    </div>
                   )}
                 </div>
                 <h3 className="text-lg font-normal text-black dark:text-white mb-2">

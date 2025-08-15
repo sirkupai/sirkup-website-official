@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function StartupsPage() {
   const sectionsRef = useRef<HTMLElement[]>([])
@@ -34,19 +35,18 @@ export default function StartupsPage() {
   const features = [
     {
       title: 'Launch products faster with AI',
-      description: 'From idea to market in weeks, not months.'
+      description: 'From idea to market in weeks, not months.',
+      image: '/images/startup-subpage (1).png'
     },
     {
       title: 'Automate operations from day one',
-      description: 'Build efficient processes without large teams.'
+      description: 'Build efficient processes without large teams.',
+      image: '/images/startup-subpage (2).png'
     },
     {
       title: 'Data-driven decision making',
-      description: 'Make informed choices with AI-powered analytics.'
-    },
-    {
-      title: 'Scale intelligently with AI agents',
-      description: 'Grow your capabilities without growing costs.'
+      description: 'Make informed choices with AI-powered analytics.',
+      image: '/images/startup-subpage (3).png'
     }
   ]
 
@@ -77,15 +77,25 @@ export default function StartupsPage() {
       {/* Features Grid */}
       <section ref={addSectionRef} className="py-20 px-4 md:px-8 opacity-0">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {features.map((feature, index) => (
               <div key={index} className="text-center">
-                <div className="bg-gray-50 dark:bg-zinc-900 rounded-2xl mb-4 h-64 relative overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center text-gray-400 dark:text-gray-600">
-                    <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                    </svg>
-                  </div>
+                <div className="bg-gray-50 dark:bg-zinc-900 rounded-2xl mb-4 p-2 min-h-[200px]">
+                  {feature.image ? (
+                    <Image
+                      src={feature.image}
+                      alt={feature.title}
+                      width={600}
+                      height={400}
+                      className="w-full h-auto object-contain rounded-xl"
+                    />
+                  ) : (
+                    <div className="flex items-center justify-center h-[200px] text-gray-400 dark:text-gray-600">
+                      <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                      </svg>
+                    </div>
+                  )}
                 </div>
                 <h3 className="text-lg font-normal text-black dark:text-white mb-2">
                   {feature.title}

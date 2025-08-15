@@ -36,22 +36,17 @@ export default function FinancialServicesPage() {
     {
       title: 'AI-driven wealth management',
       description: 'Personalized investment strategies at scale.',
-      image: '/images/financial-services-subpage.jpg'
+      image: '/images/financial-services-subpage (1).png'
     },
     {
       title: 'Automated compliance and reporting',
       description: 'Stay compliant with evolving regulations.',
-      image: null
+      image: '/images/financial-services-subpage (2).png'
     },
     {
       title: 'Risk assessment and fraud detection',
       description: 'Protect assets with predictive analytics.',
-      image: null
-    },
-    {
-      title: 'Client relationship intelligence',
-      description: 'Deepen client engagement with AI insights.',
-      image: null
+      image: '/images/financial-services-subpage (3).png'
     }
   ]
 
@@ -82,19 +77,20 @@ export default function FinancialServicesPage() {
       {/* Features Grid */}
       <section ref={addSectionRef} className="py-20 px-4 md:px-8 opacity-0">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {features.map((feature, index) => (
               <div key={index} className="text-center">
-                <div className="bg-gray-50 dark:bg-zinc-900 rounded-2xl mb-4 h-64 relative overflow-hidden">
+                <div className="bg-gray-50 dark:bg-zinc-900 rounded-2xl mb-4 p-2 min-h-[200px]">
                   {feature.image ? (
                     <Image
                       src={feature.image}
                       alt={feature.title}
-                      fill
-                      className="object-cover"
+                      width={600}
+                      height={400}
+                      className="w-full h-auto object-contain rounded-xl"
                     />
                   ) : (
-                    <div className="absolute inset-0 flex items-center justify-center text-gray-400 dark:text-gray-600">
+                    <div className="flex items-center justify-center h-[200px] text-gray-400 dark:text-gray-600">
                       <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                       </svg>

@@ -41,17 +41,12 @@ export default function HealthcarePage() {
     {
       title: 'Automated medical documentation',
       description: 'Reduce paperwork and focus on patient care.',
-      image: null
+      image: '/images/health-care-subpage (2).jpg'
     },
     {
       title: 'Patient engagement and monitoring',
       description: 'Personalized care plans and remote health tracking.',
-      image: null
-    },
-    {
-      title: 'Healthcare operations optimization',
-      description: 'Improve efficiency and reduce operational costs.',
-      image: null
+      image: '/images/health-care-subpage (3).jpg'
     }
   ]
 
@@ -82,19 +77,20 @@ export default function HealthcarePage() {
       {/* Features Grid */}
       <section ref={addSectionRef} className="py-20 px-4 md:px-8 opacity-0">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {features.map((feature, index) => (
               <div key={index} className="text-center">
-                <div className="bg-gray-50 dark:bg-zinc-900 rounded-2xl mb-4 h-64 relative overflow-hidden">
+                <div className="bg-gray-50 dark:bg-zinc-900 rounded-2xl mb-4 p-2 min-h-[200px]">
                   {feature.image ? (
                     <Image
                       src={feature.image}
                       alt={feature.title}
-                      fill
-                      className="object-cover"
+                      width={600}
+                      height={400}
+                      className="w-full h-auto object-contain rounded-xl"
                     />
                   ) : (
-                    <div className="absolute inset-0 flex items-center justify-center text-gray-400 dark:text-gray-600">
+                    <div className="flex items-center justify-center h-[200px] text-gray-400 dark:text-gray-600">
                       <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                       </svg>
