@@ -80,9 +80,9 @@ export default function StartupsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <div key={index} className="text-center">
-                <div className="bg-gray-50 dark:bg-zinc-900 rounded-2xl p-6 mb-4 h-64 flex items-center justify-center overflow-hidden">
-                  <div className="text-gray-400 dark:text-gray-600">
-                    <svg className="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="bg-gray-50 dark:bg-zinc-900 rounded-2xl mb-4 h-64 relative overflow-hidden">
+                  <div className="absolute inset-0 flex items-center justify-center text-gray-400 dark:text-gray-600">
+                    <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                     </svg>
                   </div>

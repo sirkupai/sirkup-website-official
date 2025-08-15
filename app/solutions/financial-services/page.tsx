@@ -85,18 +85,17 @@ export default function FinancialServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <div key={index} className="text-center">
-                <div className="bg-gray-50 dark:bg-zinc-900 rounded-2xl p-6 mb-4 h-64 flex items-center justify-center overflow-hidden">
+                <div className="bg-gray-50 dark:bg-zinc-900 rounded-2xl mb-4 h-64 relative overflow-hidden">
                   {feature.image ? (
                     <Image
                       src={feature.image}
                       alt={feature.title}
-                      width={300}
-                      height={200}
-                      className="object-cover rounded-lg"
+                      fill
+                      className="object-cover"
                     />
                   ) : (
-                    <div className="text-gray-400 dark:text-gray-600">
-                      <svg className="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="absolute inset-0 flex items-center justify-center text-gray-400 dark:text-gray-600">
+                      <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                       </svg>
                     </div>

@@ -47,12 +47,16 @@ export default function Home() {
               SirkupAI is an operator-led, R&D-first AI systems studio. We build production-grade AI that transforms businesses across Pakistan and the UAE.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-4">
-              <Button className="bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-100 px-6 py-3 text-sm font-medium rounded-md">
-                Get started →
-              </Button>
-              <Button variant="outline" className="border-gray-300 dark:border-gray-700 text-black dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 px-6 py-3 text-sm font-medium rounded-md">
-                Contact sales
-              </Button>
+              <Link href="/solutions">
+                <Button className="bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-100 px-6 py-3 text-sm font-medium rounded-md">
+                  Get started →
+                </Button>
+              </Link>
+              <Link href="/contact">
+                <Button variant="outline" className="border-gray-300 dark:border-gray-700 text-black dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 px-6 py-3 text-sm font-medium rounded-md">
+                  Contact sales
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
@@ -84,7 +88,7 @@ export default function Home() {
                 </li>
               </ul>
 
-              <Link href="#" className="text-sm font-medium text-gray-900 dark:text-gray-100 hover:text-black dark:hover:text-white">
+              <Link href="/contact" className="text-sm font-medium text-gray-900 dark:text-gray-100 hover:text-black dark:hover:text-white">
                 See pricing
               </Link>
 
@@ -140,10 +144,10 @@ export default function Home() {
               </ul>
 
               <div className="flex gap-4">
-                <Link href="#" className="text-sm font-medium text-gray-900 dark:text-gray-100 hover:text-black dark:hover:text-white">
+                <Link href="/solutions" className="text-sm font-medium text-gray-900 dark:text-gray-100 hover:text-black dark:hover:text-white">
                   Start building
                 </Link>
-                <Link href="#" className="text-sm font-medium text-gray-900 dark:text-gray-100 hover:text-black dark:hover:text-white">
+                <Link href="/contact" className="text-sm font-medium text-gray-900 dark:text-gray-100 hover:text-black dark:hover:text-white">
                   Contact sales →
                 </Link>
               </div>
@@ -311,7 +315,7 @@ export default function Home() {
                   </li>
                 </ul>
 
-                <Link href="#" className="inline-block mt-8 text-sm font-medium text-black dark:text-white hover:underline">
+                <Link href="/solutions" className="inline-block mt-8 text-sm font-medium text-black dark:text-white hover:underline">
                   Learn about SirkupAI Academy →
                 </Link>
               </div>
@@ -370,7 +374,7 @@ export default function Home() {
                 </li>
               </ul>
 
-              <Link href="#" className="inline-block mt-8 text-sm font-medium text-black dark:text-white hover:underline">
+              <Link href="/team" className="inline-block mt-8 text-sm font-medium text-black dark:text-white hover:underline">
                 Learn about our approach →
               </Link>
             </div>
@@ -409,7 +413,7 @@ export default function Home() {
                   </li>
                 </ul>
 
-                <Link href="#" className="inline-block mt-8 text-sm font-medium text-black dark:text-white hover:underline">
+                <Link href="/contact" className="inline-block mt-8 text-sm font-medium text-black dark:text-white hover:underline">
                   View security standards →
                 </Link>
               </div>
@@ -453,7 +457,7 @@ export default function Home() {
             <h2 className="text-4xl font-normal mb-4 dark:text-white">
               Guides and resources for<br />integrating AI into your business
             </h2>
-            <Link href="#" className="inline-block mt-6 text-sm font-medium text-black dark:text-white hover:underline">
+            <Link href="/solutions" className="inline-block mt-6 text-sm font-medium text-black dark:text-white hover:underline">
               Learn more
             </Link>
           </div>
