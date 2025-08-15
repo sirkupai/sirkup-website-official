@@ -95,3 +95,14 @@ temp/
 
 # Certificates
 *.pem
+
+# Documentation and PDFs
+*.pdf
+
+# Markdown files (except README and important docs)
+*.md
+!README.md
+!LICENSE.md
+!CONTRIBUTING.md
+!CHANGELOG.md
+!CODE_OF_CONDUCT.md

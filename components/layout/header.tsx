@@ -35,7 +35,7 @@ const Header = ({ isMobile = false, sidebarHidden = true, onMenuClick }: HeaderP
   }, [lastScrollY])
 
   return (
-    <header className={`fixed top-0 right-0 left-0 h-16 z-50 flex items-center justify-between px-4 md:px-8 bg-white/95 backdrop-blur-md transition-transform duration-300 ease-in-out ${
+    <header className={`fixed top-0 right-0 left-0 h-16 z-40 flex items-center justify-between px-4 md:px-8 bg-white/95 dark:bg-black/95 backdrop-blur-md transition-transform duration-300 ease-in-out ${
       isVisible ? 'translate-y-0' : '-translate-y-full'
     }`}>
       {/* On mobile: Logo on far left, toggle on far right */}
@@ -49,7 +49,7 @@ const Header = ({ isMobile = false, sidebarHidden = true, onMenuClick }: HeaderP
               alt="SirkupAI"
               width={120}
               height={32}
-              className="object-contain"
+              className="object-contain dark:invert"
               priority
             />
           </Link>
@@ -78,7 +78,7 @@ const Header = ({ isMobile = false, sidebarHidden = true, onMenuClick }: HeaderP
                     alt="SirkupAI"
                     width={150}
                     height={40}
-                    className="object-contain"
+                    className="object-contain dark:invert"
                     priority
                   />
                 </Link>

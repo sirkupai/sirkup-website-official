@@ -79,7 +79,7 @@ Add decorative background images for sections:
 ## File Naming Instructions
 
 When you add these files, please ensure:
-
+s
 1. **Use lowercase filenames** with hyphens (no spaces or underscores)
 2. **Prefer SVG format** for logos when available (better scaling)
 3. **Use PNG format** for complex images or screenshots

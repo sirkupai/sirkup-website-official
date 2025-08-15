@@ -48,6 +48,9 @@ const Sidebar = ({ isCollapsed, isHidden = false, isMobile = false, onToggle }: 
 
   const navigation = [
     { name: 'Home', href: '/' },
+    { name: 'Solutions', href: '/solutions' },
+    { name: 'Team', href: '/team' },
+    { name: 'Contact', href: '/contact' },
   ]
 
   // Prefetch all routes on mount for instant navigation
@@ -94,14 +97,14 @@ const Sidebar = ({ isCollapsed, isHidden = false, isMobile = false, onToggle }: 
           mass: 0.8
         }}
         className={cn(
-          "fixed left-0 top-0 h-full bg-white z-50",
+          "fixed left-0 top-0 h-full bg-white dark:bg-black z-[60]",
           "flex flex-col overflow-hidden"
         )}
       >
         {/* Header with logo and toggle - only on desktop */}
         {!isMobile && (
           <div className={cn(
-            "flex items-center justify-between p-4 md:p-3 h-[88px] transition-transform duration-300",
+            "flex items-center justify-between p-4 md:p-3 h-[88px] transition-transform duration-300 relative z-10",
             !headerVisible && "-translate-y-full"
           )}>
             {/* SirkupAI Logo - desktop only */}
@@ -114,7 +117,7 @@ const Sidebar = ({ isCollapsed, isHidden = false, isMobile = false, onToggle }: 
                 alt="SirkupAI"
                 width={150}
                 height={50}
-                className="object-contain"
+                className="object-contain dark:invert relative z-20"
                 priority
               />
             </Link>
@@ -124,6 +127,7 @@ const Sidebar = ({ isCollapsed, isHidden = false, isMobile = false, onToggle }: 
               <SidebarToggle 
                 isOpen={!isCollapsed} 
                 onClick={onToggle}
+                className="relative z-20"
               />
             </div>
           </div>
@@ -148,8 +152,8 @@ const Sidebar = ({ isCollapsed, isHidden = false, isMobile = false, onToggle }: 
                         "block px-4 py-3 rounded-lg text-sm font-medium",
                         "transition-all duration-200",
                         isActive
-                          ? "bg-gray-100 text-gray-900"
-                          : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                          ? "bg-gray-100 dark:bg-zinc-800 text-gray-900 dark:text-white"
+                          : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-zinc-800"
                       )}
                       onClick={() => isMobile && onToggle()}
                     >
@@ -163,7 +167,7 @@ const Sidebar = ({ isCollapsed, isHidden = false, isMobile = false, onToggle }: 
             {/* Footer */}
             <div className="p-6">
               <div className="text-center">
-                <p className="text-xs text-gray-500">© 2025 SirkupAI</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400">© 2025 SirkupAI</p>
               </div>
             </div>
           </>
