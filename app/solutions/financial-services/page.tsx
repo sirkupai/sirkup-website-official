@@ -36,17 +36,17 @@ export default function FinancialServicesPage() {
     {
       title: 'AI-driven wealth management',
       description: 'Personalized investment strategies at scale.',
-      image: '/images/financial-services-subpage (1).png'
+      image: '/images/financial-services-subpage (1).jpg'
     },
     {
       title: 'Automated compliance and reporting',
       description: 'Stay compliant with evolving regulations.',
-      image: '/images/financial-services-subpage (2).png'
+      image: '/images/financial-services-subpage (2).jpg'
     },
     {
       title: 'Risk assessment and fraud detection',
       description: 'Protect assets with predictive analytics.',
-      image: '/images/financial-services-subpage (3).png'
+      image: '/images/financial-services-subpage (3).jpg'
     }
   ]
 

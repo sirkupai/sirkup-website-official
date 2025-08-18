@@ -47,7 +47,7 @@ export default function ContactPage() {
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label htmlFor="companySize" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Company size <span className="text-red-500">*</span>
+              <span className="text-red-500">*</span> Company size
             </label>
             <select
               id="companySize"
@@ -69,7 +69,7 @@ export default function ContactPage() {
 
           <div>
             <label htmlFor="companyName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Company name <span className="text-red-500">*</span>
+              <span className="text-red-500">*</span> Company name
             </label>
             <Input
               type="text"
@@ -85,7 +85,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                First name <span className="text-red-500">*</span>
+                <span className="text-red-500">*</span> First name
               </label>
               <Input
                 type="text"
@@ -100,7 +100,7 @@ export default function ContactPage() {
 
             <div>
               <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Last name <span className="text-red-500">*</span>
+                <span className="text-red-500">*</span> Last name
               </label>
               <Input
                 type="text"
@@ -117,7 +117,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label htmlFor="workEmail" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Work email <span className="text-red-500">*</span>
+                <span className="text-red-500">*</span> Work email
               </label>
               <Input
                 type="email"
@@ -132,7 +132,7 @@ export default function ContactPage() {
 
             <div>
               <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Phone number <span className="text-red-500">*</span>
+                <span className="text-red-500">*</span> Phone number
               </label>
               <Input
                 type="tel"
@@ -148,7 +148,7 @@ export default function ContactPage() {
 
           <div>
             <label htmlFor="interest" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Which of our products or services are you interested in? <span className="text-red-500">*</span>
+              <span className="text-red-500">*</span> Which of our products or services are you interested in?
             </label>
             <select
               id="interest"
@@ -159,12 +159,9 @@ export default function ContactPage() {
               className="w-full px-3 py-2 border border-gray-300 dark:border-zinc-700 rounded-md shadow-sm bg-white dark:bg-zinc-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-white focus:border-gray-900 dark:focus:border-white"
             >
               <option value="">Select one from the dropdown options below</option>
-              <option value="adalbot">ADALBot - Conversational AI</option>
-              <option value="callis">CallisAI - Content Intelligence</option>
-              <option value="rankingai">RankingAI - Smart Rankings</option>
-              <option value="vision">Vision AI - Computer Vision</option>
-              <option value="custom">Custom AI Solutions</option>
-              <option value="consulting">AI Consulting</option>
+              <option value="automation">Automation Workflows</option>
+              <option value="content">Content Intelligence Systems</option>
+              <option value="conversational">Conversational AI & Sales Intelligence</option>
             </select>
           </div>
 

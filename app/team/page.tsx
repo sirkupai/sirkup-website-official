@@ -6,7 +6,7 @@ import Link from 'next/link'
 const teamMembers = {
   ceo: {
     name: 'Bilal Ahmad',
-    title: 'Co-founder & CEO',
+    title: 'CEO and Co-Founder',
     description: 'Bilal sets direction and partnerships. He aligns R&D with client needs and keeps the studio focused on production-worthy results. His work centers on market fit, responsible deployment, and sustainable growth.',
     expertise: ['Strategic Direction', 'Partnerships', 'Market Fit', 'Responsible AI']
   },
@@ -22,6 +22,32 @@ const teamMembers = {
       title: 'Team Lead & Business Development',
       description: 'Anees leads go-to-market and client success. He frames problems, clarifies constraints, and scopes pilots that show value quickly.',
       expertise: ['Go-to-Market', 'Client Success', 'Business Development', 'Pilot Programs']
+    }
+  ],
+  team: [
+    {
+      name: 'Moeez Hassan',
+      title: 'Senior Video Editor',
+      description: 'Moeez leads our video production efforts, crafting compelling visual narratives that showcase our AI solutions and innovations.',
+      expertise: ['Video Production', 'Post-Production', 'Motion Graphics', 'Visual Storytelling']
+    },
+    {
+      name: 'Muhammad Ammar Khan',
+      title: 'Creative Director',
+      description: 'Ammar shapes our creative vision, ensuring our brand and solutions communicate effectively across all touchpoints.',
+      expertise: ['Creative Strategy', 'Brand Development', 'Design Systems', 'Visual Communication']
+    },
+    {
+      name: 'Syed Ali Ahzum Bukhari',
+      title: 'AI Expert',
+      description: 'Ali specializes in developing and implementing cutting-edge AI solutions, bringing deep technical expertise to our projects.',
+      expertise: ['Machine Learning', 'Deep Learning', 'AI Architecture', 'Model Optimization']
+    },
+    {
+      name: 'Siyam Haider',
+      title: 'AI Expert',
+      description: 'Siyam drives AI innovation, focusing on practical applications that deliver measurable business value for our clients.',
+      expertise: ['AI Solutions', 'Natural Language Processing', 'Computer Vision', 'AI Integration']
     }
   ]
 }
@@ -112,6 +138,50 @@ export default function TeamPage() {
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {teamMembers.executives.map((member, index) => (
+                <div key={index} className="relative">
+                  {/* Card - consistent with site style */}
+                  <div className="relative bg-white dark:bg-black border border-gray-200 dark:border-zinc-800 rounded-lg p-6 md:p-8 h-full">
+                    <div>
+                      {/* Name and Title */}
+                      <h3 className="text-2xl font-normal text-black dark:text-white mb-1">
+                        {member.name}
+                      </h3>
+                      <p className="text-base text-gray-600 dark:text-gray-400 mb-4">
+                        {member.title}
+                      </p>
+
+                      {/* Description */}
+                      <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+                        {member.description}
+                      </p>
+
+                      {/* Expertise Tags */}
+                      <div className="flex flex-wrap gap-2">
+                        {member.expertise.map((skill, skillIndex) => (
+                          <span 
+                            key={skillIndex}
+                            className="px-3 py-1.5 text-gray-600 dark:text-gray-400 text-xs"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Team Members Section */}
+        <section ref={addSectionRef} className="pb-12 md:pb-20 opacity-0">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-normal text-black dark:text-white text-center mb-12">
+              Our Team
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {teamMembers.team.map((member, index) => (
                 <div key={index} className="relative">
                   {/* Card - consistent with site style */}
                   <div className="relative bg-white dark:bg-black border border-gray-200 dark:border-zinc-800 rounded-lg p-6 md:p-8 h-full">

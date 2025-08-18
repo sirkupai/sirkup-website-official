@@ -36,17 +36,17 @@ export default function StartupsPage() {
     {
       title: 'Launch products faster with AI',
       description: 'From idea to market in weeks, not months.',
-      image: '/images/startup-subpage (1).png'
+      image: '/images/startup-subpage (1).jpg'
     },
     {
       title: 'Automate operations from day one',
       description: 'Build efficient processes without large teams.',
-      image: '/images/startup-subpage (2).png'
+      image: '/images/startup-subpage (2).jpg'
     },
     {
       title: 'Data-driven decision making',
       description: 'Make informed choices with AI-powered analytics.',
-      image: '/images/startup-subpage (3).png'
+      image: '/images/startup-subpage (3).jpg'
     }
   ]
 

@@ -36,17 +36,17 @@ export default function SalesMarketingPage() {
     {
       title: 'Content Intelligence Systems for faster asset creation',
       description: 'From 8 hours to 30 minutes per asset with AI-assisted workflows.',
-      image: '/images/sales-and-marketing-subpages (1).jpeg'
+      image: '/images/sales-and-marketing-subpages (1).jpg'
     },
     {
       title: 'Conversational Intelligence for sales teams',
       description: 'Handle objections and qualify leads with domain-trained AI.',
-      image: '/images/sales-and-marketing-subpages (2).jpeg'
+      image: '/images/sales-and-marketing-subpages (2).jpg'
     },
     {
       title: 'AI-powered campaign optimization',
       description: 'Data-driven insights for better targeting and engagement.',
-      image: '/images/sales-and-marketing-subpages (3).jpeg'
+      image: '/images/sales-and-marketing-subpages (3).jpg'
     }
   ]
 

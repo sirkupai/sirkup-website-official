@@ -21,8 +21,8 @@ const solutions: Array<{
     id: 'sales-marketing',
     title: 'Sales & Marketing',
     description: 'Summarize data, uncover insights, and create campaigns in minutes.',
-    image: '/images/sales-marketing-light-mode-main.jpg',
-    darkImage: '/images/sales-marketing-dark-mode-main.jpg'
+    image: '/images/sales-marketing-light-mode-main.png',
+    darkImage: '/images/sales-marketing-dark-mode-main.png'
   },
   {
     id: 'engineering',

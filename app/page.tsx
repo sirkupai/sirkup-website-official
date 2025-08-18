@@ -94,27 +94,16 @@ export default function Home() {
 
               {/* Preview Visual */}
               <div className="mt-8 rounded-lg overflow-hidden">
-                <div className="bg-gradient-to-br from-cyan-50 to-teal-50 dark:from-zinc-800 dark:to-zinc-900 rounded-lg p-6 min-h-[200px] flex items-center justify-center">
-                  <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm dark:shadow-gray-900 p-4 max-w-sm w-full">
-                    <div className="space-y-3">
-                      <div className="flex items-start gap-3">
-                        <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full flex-shrink-0"></div>
-                        <p className="text-xs text-gray-600 dark:text-gray-400">Generate blog post from research notes.</p>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full flex-shrink-0"></div>
-                        <p className="text-xs text-gray-600 dark:text-gray-400">Create social media campaign strategy.</p>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-teal-400 rounded-full flex-shrink-0"></div>
-                        <p className="text-xs text-gray-600 dark:text-gray-400">Optimize content for SEO performance.</p>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <div className="w-8 h-8 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex-shrink-0"></div>
-                        <p className="text-xs text-gray-600 dark:text-gray-400">Review and enhance brand consistency.</p>
-                      </div>
-                    </div>
-                  </div>
+                <div className="relative rounded-lg w-full" style={{ height: '300px' }}>
+                  <Image
+                    src="/images/header-image-left.jpg"
+                    alt="Content Intelligence Preview"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                    className="object-contain rounded-lg"
+                    quality={100}
+                    priority
+                  />
                 </div>
               </div>
             </Card>
@@ -154,31 +143,16 @@ export default function Home() {
 
               {/* Preview Visual */}
               <div className="mt-8 rounded-lg overflow-hidden">
-                <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-zinc-800 dark:to-zinc-900 rounded-lg p-6 min-h-[200px] flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="mb-2 flex items-center justify-center">
-                      <Image
-                        src="/partners/nesthive-logo.png"
-                        alt="NestHive AI"
-                        width={160}
-                        height={40}
-                        className="object-contain brightness-0 dark:brightness-0 dark:invert"
-                      />
-                    </div>
-                    <div className="bg-white dark:bg-zinc-800 rounded-lg shadow-sm dark:shadow-zinc-900 p-4">
-                      <div className="space-y-2 text-left">
-                        <div className="text-xs bg-gray-100 dark:bg-zinc-700 text-gray-900 dark:text-gray-200 rounded p-2">
-                          <span className="font-medium">Lead:</span> Interested in 3-bedroom villa
-                        </div>
-                        <div className="text-xs bg-blue-50 dark:bg-blue-900/30 text-gray-900 dark:text-gray-200 rounded p-2">
-                          <span className="font-medium">AI:</span> Let me show you our premium properties...
-                        </div>
-                        <div className="text-xs bg-gray-100 dark:bg-zinc-700 text-gray-900 dark:text-gray-200 rounded p-2">
-                          <span className="font-medium">Lead:</span> What about payment plans?
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div className="relative rounded-lg w-full" style={{ height: '300px' }}>
+                  <Image
+                    src="/images/header-image-right.png"
+                    alt="Conversational Intelligence Preview"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                    className="object-contain rounded-lg"
+                    quality={100}
+                    priority
+                  />
                 </div>
               </div>
             </Card>
