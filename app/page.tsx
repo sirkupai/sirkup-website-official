@@ -145,7 +145,7 @@ export default function Home() {
               <div className="mt-8 rounded-lg overflow-hidden">
                 <div className="relative rounded-lg w-full" style={{ height: '300px' }}>
                   <Image
-                    src="/images/header-image-right.png"
+                    src="/images/header-image-right.jpg"
                     alt="Conversational Intelligence Preview"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
