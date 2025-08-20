@@ -4,10 +4,13 @@ import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export default function Home() {
   const sectionsRef = useRef<HTMLElement[]>([])
+  const [videosLoaded, setVideosLoaded] = useState(false)
+  const lightVideoRef = useRef<HTMLVideoElement>(null)
+  const darkVideoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,6 +31,23 @@ export default function Home() {
     return () => observer.disconnect()
   }, [])
 
+  // Load videos after component mounts for better performance
+  useEffect(() => {
+    const loadVideos = () => {
+      if (lightVideoRef.current) {
+        lightVideoRef.current.load()
+      }
+      if (darkVideoRef.current) {
+        darkVideoRef.current.load()
+      }
+      setVideosLoaded(true)
+    }
+    
+    // Small delay to prioritize initial content rendering
+    const timer = setTimeout(loadVideos, 100)
+    return () => clearTimeout(timer)
+  }, [])
+
   const addSectionRef = (el: HTMLElement | null) => {
     if (el && !sectionsRef.current.includes(el)) {
       sectionsRef.current.push(el)
@@ -37,9 +57,40 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white dark:bg-black">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        {/* Hero Section - Centered */}
-        <section ref={addSectionRef} className="py-12 md:py-20 text-center opacity-0">
-          <div className="max-w-4xl mx-auto">
+        {/* Hero Section - Centered with Video Background */}
+        <section ref={addSectionRef} className="relative py-20 md:py-32 lg:py-40 text-center opacity-0 overflow-hidden">
+          {/* Background Videos */}
+          <div className="absolute inset-0 z-0">
+            {/* Light theme video */}
+            <video
+              ref={lightVideoRef}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              className={`absolute inset-0 w-full h-full object-cover dark:hidden transition-opacity duration-500 ${videosLoaded ? 'opacity-100' : 'opacity-0'}`}
+            >
+              <source src="/videos/landing-page-hero-animation-light-theme.mp4" type="video/mp4" />
+            </video>
+            {/* Dark theme video */}
+            <video
+              ref={darkVideoRef}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              className={`absolute inset-0 w-full h-full object-cover hidden dark:block transition-opacity duration-500 ${videosLoaded ? 'opacity-100' : 'opacity-0'}`}
+            >
+              <source src="/videos/landing-page-hero-animation-dark-them.mp4" type="video/mp4" />
+            </video>
+            {/* Overlay for better text readability */}
+            <div className="absolute inset-0 bg-white/40 dark:bg-black/40"></div>
+          </div>
+          
+          {/* Content */}
+          <div className="relative z-10 max-w-4xl mx-auto">
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-normal tracking-tight text-black dark:text-white mb-4 md:mb-6">
               Democratizing AI for Sustainable Human Development
             </h1>
@@ -100,7 +151,16 @@ export default function Home() {
                     alt="Content Intelligence Preview"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                    className="object-contain rounded-lg"
+                    className="object-contain rounded-lg dark:hidden"
+                    quality={100}
+                    priority
+                  />
+                  <Image
+                    src="/images/header-image-dark-left.jpg"
+                    alt="Content Intelligence Preview"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                    className="object-contain rounded-lg hidden dark:block"
                     quality={100}
                     priority
                   />
@@ -149,7 +209,16 @@ export default function Home() {
                     alt="Conversational Intelligence Preview"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                    className="object-contain rounded-lg"
+                    className="object-contain rounded-lg dark:hidden"
+                    quality={100}
+                    priority
+                  />
+                  <Image
+                    src="/images/header-image-dark-right.jpg"
+                    alt="Conversational Intelligence Preview"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                    className="object-contain rounded-lg hidden dark:block"
                     quality={100}
                     priority
                   />
@@ -268,42 +337,43 @@ export default function Home() {
           <div className="p-8 md:p-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
-                <h2 className="text-4xl font-normal mb-8 dark:text-white">Enable your workforce with AI</h2>
+                <h2 className="text-4xl font-normal mb-8 dark:text-white transition-colors duration-300 hover:text-gray-700 dark:hover:text-gray-200">Enable your workforce with AI</h2>
                 
                 <ul className="space-y-4 text-gray-700 dark:text-gray-300">
-                  <li className="flex items-start">
-                    <span className="mr-3 text-gray-400 dark:text-gray-500">•</span>
-                    <span>Hands-on proficiency through SirkupAI Academy with real workflows and operator-led sessions</span>
+                  <li className="flex items-start group cursor-pointer">
+                    <span className="mr-3 text-gray-400 dark:text-gray-500 transition-colors duration-300 group-hover:text-gray-600 dark:group-hover:text-gray-300">•</span>
+                    <span className="transition-colors duration-300 group-hover:text-black dark:group-hover:text-white">Hands-on proficiency through SirkupAI Academy with real workflows and operator-led sessions</span>
                   </li>
-                  <li className="flex items-start">
-                    <span className="mr-3 text-gray-400 dark:text-gray-500">•</span>
-                    <span>Practical automation patterns that connect CRMs, content stacks, and back-office tools</span>
+                  <li className="flex items-start group cursor-pointer">
+                    <span className="mr-3 text-gray-400 dark:text-gray-500 transition-colors duration-300 group-hover:text-gray-600 dark:group-hover:text-gray-300">•</span>
+                    <span className="transition-colors duration-300 group-hover:text-black dark:group-hover:text-white">Practical automation patterns that connect CRMs, content stacks, and back-office tools</span>
                   </li>
-                  <li className="flex items-start">
-                    <span className="mr-3 text-gray-400 dark:text-gray-500">•</span>
-                    <span>Build–measure–learn approach with clear metrics and review cadence for every initiative</span>
+                  <li className="flex items-start group cursor-pointer">
+                    <span className="mr-3 text-gray-400 dark:text-gray-500 transition-colors duration-300 group-hover:text-gray-600 dark:group-hover:text-gray-300">•</span>
+                    <span className="transition-colors duration-300 group-hover:text-black dark:group-hover:text-white">Build–measure–learn approach with clear metrics and review cadence for every initiative</span>
                   </li>
-                  <li className="flex items-start">
-                    <span className="mr-3 text-gray-400 dark:text-gray-500">•</span>
-                    <span>Responsible AI with safety, privacy, and human oversight as non-negotiable standards</span>
+                  <li className="flex items-start group cursor-pointer">
+                    <span className="mr-3 text-gray-400 dark:text-gray-500 transition-colors duration-300 group-hover:text-gray-600 dark:group-hover:text-gray-300">•</span>
+                    <span className="transition-colors duration-300 group-hover:text-black dark:group-hover:text-white">Responsible AI with safety, privacy, and human oversight as non-negotiable standards</span>
                   </li>
                 </ul>
 
-                <Link href="/solutions" className="inline-block mt-8 text-sm font-medium text-black dark:text-white hover:underline">
+                <Link href="/solutions" className="inline-block mt-8 text-sm font-medium text-black dark:text-white transition-all duration-300 hover:text-gray-600 dark:hover:text-gray-300 hover:translate-x-1">
                   Learn about SirkupAI Academy →
                 </Link>
               </div>
 
-              <div className="relative">
+              <div className="relative group">
                 <div className="rounded-2xl overflow-hidden">
-                  <div className="relative w-full">
+                  <div className="relative w-full transform transition-all duration-500 group-hover:scale-105">
                     <Image
                       src="/images/workforce-bg.jpg"
                       alt="AI Workforce"
                       width={600}
                       height={450}
-                      className="object-contain w-full h-auto rounded-2xl"
+                      className="object-contain w-full h-auto rounded-2xl transition-all duration-500 group-hover:brightness-110"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
                   </div>
                 </div>
               </div>
@@ -316,39 +386,40 @@ export default function Home() {
         {/* Build AI-native Products Section */}
         <section ref={addSectionRef} className="py-12 md:py-20 opacity-0">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="relative order-2 lg:order-1">
+            <div className="relative order-2 lg:order-1 group">
               <div className="rounded-2xl overflow-hidden">
-                <div className="relative w-full">
+                <div className="relative w-full transform transition-all duration-500 group-hover:scale-105">
                   <Image
                     src="/images/build-ai-bg.jpg"
                     alt="Build AI Products"
                     width={600}
                     height={450}
-                    className="object-contain w-full h-auto rounded-2xl"
+                    className="object-contain w-full h-auto rounded-2xl transition-all duration-500 group-hover:brightness-110"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
                 </div>
               </div>
             </div>
             
             <div className="order-1 lg:order-2">
-              <h2 className="text-4xl font-normal mb-8 dark:text-white">Build AI-native products and experiences</h2>
+              <h2 className="text-4xl font-normal mb-8 dark:text-white transition-colors duration-300 hover:text-gray-700 dark:hover:text-gray-200">Build AI-native products and experiences</h2>
               
               <ul className="space-y-4 text-gray-700 dark:text-gray-300">
-                <li className="flex items-start">
-                  <span className="mr-3 text-gray-400 dark:text-gray-500">•</span>
-                  <span>Operator-led development that closes the gap between promising models and production systems</span>
+                <li className="flex items-start group cursor-pointer">
+                  <span className="mr-3 text-gray-400 dark:text-gray-500 transition-colors duration-300 group-hover:text-gray-600 dark:group-hover:text-gray-300">•</span>
+                  <span className="transition-colors duration-300 group-hover:text-black dark:group-hover:text-white">Operator-led development that closes the gap between promising models and production systems</span>
                 </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-gray-400 dark:text-gray-500">•</span>
-                  <span>Real experiments with real users - we share what works and retire what doesn't</span>
+                <li className="flex items-start group cursor-pointer">
+                  <span className="mr-3 text-gray-400 dark:text-gray-500 transition-colors duration-300 group-hover:text-gray-600 dark:group-hover:text-gray-300">•</span>
+                  <span className="transition-colors duration-300 group-hover:text-black dark:group-hover:text-white">Real experiments with real users - we share what works and retire what doesn't</span>
                 </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-gray-400 dark:text-gray-500">•</span>
-                  <span>Focus on Pakistan and UAE markets with patterns that travel globally</span>
+                <li className="flex items-start group cursor-pointer">
+                  <span className="mr-3 text-gray-400 dark:text-gray-500 transition-colors duration-300 group-hover:text-gray-600 dark:group-hover:text-gray-300">•</span>
+                  <span className="transition-colors duration-300 group-hover:text-black dark:group-hover:text-white">Focus on Pakistan and UAE markets with patterns that travel globally</span>
                 </li>
               </ul>
 
-              <Link href="/team" className="inline-block mt-8 text-sm font-medium text-black dark:text-white hover:underline">
+              <Link href="/team" className="inline-block mt-8 text-sm font-medium text-black dark:text-white transition-all duration-300 hover:text-gray-600 dark:hover:text-gray-300 hover:translate-x-1">
                 Learn about our approach →
               </Link>
             </div>
@@ -362,46 +433,47 @@ export default function Home() {
           <div className="p-8 md:p-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
-                <h2 className="text-4xl font-normal mb-8 dark:text-white">Enterprise-grade data privacy, security, and admin controls</h2>
+                <h2 className="text-4xl font-normal mb-8 dark:text-white transition-colors duration-300 hover:text-gray-700 dark:hover:text-gray-200">Enterprise-grade data privacy, security, and admin controls</h2>
                 
                 <ul className="space-y-4 text-gray-700 dark:text-gray-300">
-                  <li className="flex items-start">
-                    <span className="mr-3 text-gray-400 dark:text-gray-500">•</span>
-                    <span>No customer data in training pipelines - your data stays yours</span>
+                  <li className="flex items-start group cursor-pointer">
+                    <span className="mr-3 text-gray-400 dark:text-gray-500 transition-colors duration-300 group-hover:text-gray-600 dark:group-hover:text-gray-300">•</span>
+                    <span className="transition-colors duration-300 group-hover:text-black dark:group-hover:text-white">No customer data in training pipelines - your data stays yours</span>
                   </li>
-                  <li className="flex items-start">
-                    <span className="mr-3 text-gray-400 dark:text-gray-500">•</span>
-                    <span>Human-supervised AI with clear safeguards and traceability for sensitive contexts</span>
+                  <li className="flex items-start group cursor-pointer">
+                    <span className="mr-3 text-gray-400 dark:text-gray-500 transition-colors duration-300 group-hover:text-gray-600 dark:group-hover:text-gray-300">•</span>
+                    <span className="transition-colors duration-300 group-hover:text-black dark:group-hover:text-white">Human-supervised AI with clear safeguards and traceability for sensitive contexts</span>
                   </li>
-                  <li className="flex items-start">
-                    <span className="mr-3 text-gray-400 dark:text-gray-500">•</span>
-                    <span>Observable pipelines with clear ownership and audit trails</span>
+                  <li className="flex items-start group cursor-pointer">
+                    <span className="mr-3 text-gray-400 dark:text-gray-500 transition-colors duration-300 group-hover:text-gray-600 dark:group-hover:text-gray-300">•</span>
+                    <span className="transition-colors duration-300 group-hover:text-black dark:group-hover:text-white">Observable pipelines with clear ownership and audit trails</span>
                   </li>
-                  <li className="flex items-start">
-                    <span className="mr-3 text-gray-400 dark:text-gray-500">•</span>
-                    <span>GDPR and CCPA compliance with enterprise security standards</span>
+                  <li className="flex items-start group cursor-pointer">
+                    <span className="mr-3 text-gray-400 dark:text-gray-500 transition-colors duration-300 group-hover:text-gray-600 dark:group-hover:text-gray-300">•</span>
+                    <span className="transition-colors duration-300 group-hover:text-black dark:group-hover:text-white">GDPR and CCPA compliance with enterprise security standards</span>
                   </li>
-                  <li className="flex items-start">
-                    <span className="mr-3 text-gray-400 dark:text-gray-500">•</span>
-                    <span>On-site operations in Islamabad and Dubai with local data residency options</span>
+                  <li className="flex items-start group cursor-pointer">
+                    <span className="mr-3 text-gray-400 dark:text-gray-500 transition-colors duration-300 group-hover:text-gray-600 dark:group-hover:text-gray-300">•</span>
+                    <span className="transition-colors duration-300 group-hover:text-black dark:group-hover:text-white">On-site operations in Islamabad and Dubai with local data residency options</span>
                   </li>
                 </ul>
 
-                <Link href="/contact" className="inline-block mt-8 text-sm font-medium text-black dark:text-white hover:underline">
+                <Link href="/contact" className="inline-block mt-8 text-sm font-medium text-black dark:text-white transition-all duration-300 hover:text-gray-600 dark:hover:text-gray-300 hover:translate-x-1">
                   View security standards →
                 </Link>
               </div>
 
-              <div className="relative">
+              <div className="relative group">
                 <div className="rounded-2xl overflow-hidden">
-                  <div className="relative w-full">
+                  <div className="relative w-full transform transition-all duration-500 group-hover:scale-105">
                     <Image
                       src="/images/security-bg.jpg"
                       alt="Enterprise Security"
                       width={600}
                       height={450}
-                      className="object-contain w-full h-auto rounded-2xl"
+                      className="object-contain w-full h-auto rounded-2xl transition-all duration-500 group-hover:brightness-110"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
                   </div>
                 </div>
               </div>

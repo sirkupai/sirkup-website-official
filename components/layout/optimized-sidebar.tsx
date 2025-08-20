@@ -88,7 +88,7 @@ const Sidebar = ({ isCollapsed, isHidden = false, isMobile = false, onToggle }: 
         initial={false}
         animate={{ 
           x: isHidden ? '-100%' : '0%',
-          width: isMobile ? '100vw' : (isCollapsed ? '190px' : '200px'),
+          width: isMobile ? '280px' : (isCollapsed ? '60px' : '200px'),
         }}
         transition={{ 
           type: "spring", 
@@ -98,32 +98,38 @@ const Sidebar = ({ isCollapsed, isHidden = false, isMobile = false, onToggle }: 
         }}
         className={cn(
           "fixed left-0 top-0 h-full bg-white dark:bg-black z-[60]",
-          "flex flex-col overflow-hidden"
+          "flex flex-col",
+          isMobile && "shadow-xl"
         )}
       >
-        {/* Header with logo and toggle - only on desktop */}
-        {!isMobile && (
+        {/* Header with logo and toggle - desktop only */}
+        {!isMobile ? (
           <div className={cn(
-            "flex items-center justify-between p-4 md:p-3 h-[88px] transition-transform duration-300 relative z-10",
+            "flex items-center h-[88px] transition-all duration-300 relative z-10 px-3 py-3",
             !headerVisible && "-translate-y-full"
           )}>
-            {/* SirkupAI Logo - desktop only */}
-            <Link 
-              href="/" 
-              className="flex items-center h-10 flex-shrink-0"
-            >
-              <Image
-                src="/sirkupai-logo.png"
-                alt="SirkupAI"
-                width={150}
-                height={50}
-                className="object-contain dark:invert relative z-20"
-                priority
-              />
-            </Link>
+            {/* Logo - show when not collapsed on desktop */}
+            {!isCollapsed && (
+              <Link 
+                href="/" 
+                className="flex items-center h-12 flex-1"
+              >
+                <Image
+                  src="/sirkupai-logo.png"
+                  alt="SirkupAI"
+                  width={180}
+                  height={60}
+                  className="object-contain dark:invert relative z-20"
+                  priority
+                />
+              </Link>
+            )}
             
-            {/* SidebarToggle button - desktop only */}
-            <div className="flex items-center h-10">
+            {/* Toggle button - position based on state */}
+            <div className={cn(
+              "flex items-center h-10",
+              isCollapsed && "mx-auto"
+            )}>
               <SidebarToggle 
                 isOpen={!isCollapsed} 
                 onClick={onToggle}
@@ -131,15 +137,17 @@ const Sidebar = ({ isCollapsed, isHidden = false, isMobile = false, onToggle }: 
               />
             </div>
           </div>
+        ) : (
+          // Mobile - just empty space at top, no toggle button
+          <div className="h-16"></div>
         )}
 
         {showContent && (
           <>
 
-            {/* Vertically centered navigation - add padding on mobile for header space */}
+            {/* Vertically centered navigation */}
             <div className={cn(
-              "flex-1 flex items-center justify-center px-4",
-              isMobile && "pt-16" // Add top padding on mobile to account for fixed header
+              "flex-1 flex items-center justify-center px-4"
             )}>
               <nav className="w-full space-y-2">
                 {navigation.map((item) => {

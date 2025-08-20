@@ -69,8 +69,8 @@ const MainLayout = ({ children }: MainLayoutProps) => {
       return '0' // On mobile, sidebar overlays so no margin needed
     }
     
-    // On desktop - when sidebar is collapsed it should center content
-    return sidebarCollapsed ? '0' : '200px'
+    // On desktop - account for collapsed sidebar width (60px when collapsed, 200px when expanded)
+    return sidebarCollapsed ? '60px' : '200px'
   }
 
   const getMainPadding = () => {

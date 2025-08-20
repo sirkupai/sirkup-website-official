@@ -18,6 +18,24 @@ const teamMembers = {
       expertise: ['Operations', 'Delivery', 'Process Design', 'Risk Management']
     },
     {
+      name: 'Mizab Ghulam Nabi',
+      title: 'CTO',
+      description: 'Mizab leads our technology strategy and architecture, ensuring we build scalable, reliable AI systems that deliver real value.',
+      expertise: ['Technology Strategy', 'System Architecture', 'AI Infrastructure', 'Technical Leadership']
+    },
+    {
+      name: 'Choudhary Hashir',
+      title: 'CHRO',
+      description: 'Hashir leads our human resources initiatives, building a culture of innovation and ensuring we attract and retain top talent.',
+      expertise: ['Human Resources', 'Talent Management', 'Culture Development', 'Organizational Design']
+    },
+    {
+      name: 'Umer Azam',
+      title: 'CCO',
+      description: 'Umer drives our commercial strategy, ensuring we deliver value to clients while growing sustainably.',
+      expertise: ['Commercial Strategy', 'Revenue Growth', 'Client Relationships', 'Market Expansion']
+    },
+    {
       name: 'Anees Qureshi',
       title: 'Team Lead & Business Development',
       description: 'Anees leads go-to-market and client success. He frames problems, clarifies constraints, and scopes pilots that show value quickly.',
@@ -26,16 +44,22 @@ const teamMembers = {
   ],
   team: [
     {
-      name: 'Moeez Hassan',
-      title: 'Senior Video Editor',
-      description: 'Moeez leads our video production efforts, crafting compelling visual narratives that showcase our AI solutions and innovations.',
-      expertise: ['Video Production', 'Post-Production', 'Motion Graphics', 'Visual Storytelling']
-    },
-    {
       name: 'Muhammad Ammar Khan',
       title: 'Creative Director',
       description: 'Ammar shapes our creative vision, ensuring our brand and solutions communicate effectively across all touchpoints.',
       expertise: ['Creative Strategy', 'Brand Development', 'Design Systems', 'Visual Communication']
+    },
+    {
+      name: 'Sara Azam',
+      title: 'HR / Finance Head',
+      description: 'Sara manages our financial operations and supports HR initiatives, ensuring sustainable growth and operational excellence.',
+      expertise: ['Financial Management', 'HR Operations', 'Compliance', 'Resource Planning']
+    },
+    {
+      name: 'Iman Ammar Khan',
+      title: 'Head of Content Department',
+      description: 'Iman leads our content strategy and production, creating engaging narratives that showcase our AI innovations.',
+      expertise: ['Content Strategy', 'Content Production', 'Editorial Direction', 'Brand Messaging']
     },
     {
       name: 'Syed Ali Ahzum Bukhari',
@@ -48,6 +72,36 @@ const teamMembers = {
       title: 'AI Expert',
       description: 'Siyam drives AI innovation, focusing on practical applications that deliver measurable business value for our clients.',
       expertise: ['AI Solutions', 'Natural Language Processing', 'Computer Vision', 'AI Integration']
+    },
+    {
+      name: 'Ramsha Rafique',
+      title: 'Front End Engineer',
+      description: 'Ramsha builds intuitive user interfaces that make our AI solutions accessible and user-friendly.',
+      expertise: ['Frontend Development', 'React', 'UI/UX Implementation', 'Web Performance']
+    },
+    {
+      name: 'Muskan Iqbal',
+      title: 'Associate Front-End Developer',
+      description: 'Muskan contributes to our frontend development efforts, creating responsive and engaging web experiences.',
+      expertise: ['Frontend Development', 'JavaScript', 'CSS', 'Responsive Design']
+    },
+    {
+      name: 'Salman Khan',
+      title: 'Content Engineer (Post-Production Specialist)',
+      description: 'Salman specializes in post-production workflows, ensuring our content meets the highest quality standards.',
+      expertise: ['Post-Production', 'Video Editing', 'Content Engineering', 'Quality Assurance']
+    },
+    {
+      name: 'Moiz Hassan',
+      title: 'Content Engineer (Post-Production Specialist)',
+      description: 'Moiz enhances our content production pipeline with expertise in post-production and technical workflows.',
+      expertise: ['Post-Production', 'Motion Graphics', 'Content Engineering', 'Technical Workflows']
+    },
+    {
+      name: 'Frederick Samanga',
+      title: 'AI Automation Developer',
+      description: 'Frederick specializes in building AI-powered automation solutions and developing intelligent systems that streamline business processes.',
+      expertise: ['AI Automation', 'Python', 'Machine Learning', 'Process Optimization']
     }
   ]
 }
@@ -121,7 +175,7 @@ export default function TeamPage() {
                     {teamMembers.ceo.expertise.map((skill, index) => (
                       <span 
                         key={index}
-                        className="px-4 py-2 text-gray-600 dark:text-gray-400 text-sm"
+                        className="px-4 py-2 bg-gray-50 dark:bg-zinc-900 text-gray-600 dark:text-gray-400 text-sm rounded-full"
                       >
                         {skill}
                       </span>
@@ -133,9 +187,12 @@ export default function TeamPage() {
           </div>
         </section>
 
-        {/* Co-founders Section - Ahmed and Anees */}
+        {/* Executives Section - C-suite and Co-founders */}
         <section ref={addSectionRef} className="pb-12 md:pb-20 opacity-0">
           <div className="max-w-6xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-normal text-black dark:text-white text-center mb-12">
+              Executive Leadership
+            </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {teamMembers.executives.map((member, index) => (
                 <div key={index} className="relative">
@@ -160,7 +217,7 @@ export default function TeamPage() {
                         {member.expertise.map((skill, skillIndex) => (
                           <span 
                             key={skillIndex}
-                            className="px-3 py-1.5 text-gray-600 dark:text-gray-400 text-xs"
+                            className="px-3 py-1.5 bg-gray-50 dark:bg-zinc-900 text-gray-600 dark:text-gray-400 text-xs rounded-full"
                           >
                             {skill}
                           </span>
@@ -204,7 +261,7 @@ export default function TeamPage() {
                         {member.expertise.map((skill, skillIndex) => (
                           <span 
                             key={skillIndex}
-                            className="px-3 py-1.5 text-gray-600 dark:text-gray-400 text-xs"
+                            className="px-3 py-1.5 bg-gray-50 dark:bg-zinc-900 text-gray-600 dark:text-gray-400 text-xs rounded-full"
                           >
                             {skill}
                           </span>
