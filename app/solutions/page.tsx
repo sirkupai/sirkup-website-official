@@ -162,9 +162,10 @@ export default function Solutions() {
         </section>
 
         {/* CTA Section */}
-        <section ref={addSectionRef} className="py-16 md:py-24 bg-gray-50 dark:bg-zinc-900 -mx-4 md:-mx-8 px-4 md:px-8 opacity-0">
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-normal text-black dark:text-white mb-8">
+        <section ref={addSectionRef} className="py-12 md:py-20 opacity-0">
+          <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="bg-gray-100 dark:bg-zinc-900 rounded-2xl py-20 text-center">
+            <h2 className="text-4xl font-normal mb-4 dark:text-white">
               Get in touch to learn more
             </h2>
             <Link 
@@ -173,6 +174,7 @@ export default function Solutions() {
             >
               Contact sales
             </Link>
+          </div>
           </div>
         </section>
       </div>
