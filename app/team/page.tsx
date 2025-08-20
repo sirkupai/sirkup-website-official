@@ -74,9 +74,9 @@ const teamMembers = {
       expertise: ['AI Solutions', 'Natural Language Processing', 'Computer Vision', 'AI Integration']
     },
     {
-      name: 'Ramsha Rafique',
+      name: 'Rimsha Rafique',
       title: 'Front End Engineer',
-      description: 'Ramsha builds intuitive user interfaces that make our AI solutions accessible and user-friendly.',
+      description: 'Rimsha builds intuitive user interfaces that make our AI solutions accessible and user-friendly.',
       expertise: ['Frontend Development', 'React', 'UI/UX Implementation', 'Web Performance']
     },
     {
@@ -284,27 +284,36 @@ export default function TeamPage() {
             <p className="text-gray-600 dark:text-gray-400 mb-8">
               Our leadership team combines deep technical expertise with real business experience, ensuring every solution actually solves real problems.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left mt-12">
-              <div>
-                <h3 className="font-normal text-black dark:text-white mb-2">Operator-Led</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">Multi-business operators building real solutions, not slideware</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+              <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
+                <h3 className="font-semibold text-black dark:text-white mb-2 text-lg">Operator-Led</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Multi-business operators building real solutions, not slideware
+                </p>
               </div>
-              <div>
-                <h3 className="font-normal text-black dark:text-white mb-2">R&D-First</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">Closing the gap between promising models and production systems</p>
+
+              <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
+                <h3 className="font-semibold text-black dark:text-white mb-2 text-lg">R&D-First</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Closing the gap between promising models and production systems
+                </p>
               </div>
-              <div>
-                <h3 className="font-normal text-black dark:text-white mb-2">Responsible AI</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">Safety, privacy, and human oversight as non-negotiable standards</p>
+
+              <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
+                <h3 className="font-semibold text-black dark:text-white mb-2 text-lg">Responsible AI</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Safety, privacy, and human oversight as non-negotiable standards
+                </p>
               </div>
             </div>
           </div>
         </section>
 
         {/* Work With Us Section - Independent */}
-        <section ref={addSectionRef} className="py-16 md:py-24 opacity-0">
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-normal text-black dark:text-white mb-8">
+        <section ref={addSectionRef} className="py-12 md:py-20 opacity-0">
+          <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="bg-gray-100 dark:bg-zinc-900 rounded-2xl py-20 text-center">
+            <h2 className="text-4xl font-normal mb-4 dark:text-white">
               Join us in building the future
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -321,6 +330,7 @@ export default function TeamPage() {
                 Explore solutions
               </Link>
             </div>
+          </div>
           </div>
         </section>
       </div>

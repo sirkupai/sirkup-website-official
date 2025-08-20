@@ -110,9 +110,9 @@ export default function FinancialServicesPage() {
       </section>
 
       {/* Security Section */}
-      <section ref={addSectionRef} className="py-20 px-4 md:px-8 bg-gray-50 dark:bg-zinc-900 opacity-0">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-normal text-black dark:text-white mb-8">
+      <section ref={addSectionRef} className="py-12 md:py-20 opacity-0">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 bg-gray-100 dark:bg-zinc-900 rounded-2xl py-20 text-center">
+          <h2 className="text-4xl font-normal mb-4 dark:text-white">
             Bank-grade security and compliance
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
@@ -169,9 +169,10 @@ export default function FinancialServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section ref={addSectionRef} className="py-20 px-4 md:px-8 bg-gray-50 dark:bg-zinc-900 opacity-0">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-normal text-black dark:text-white mb-8">
+      <section ref={addSectionRef} className="py-12 md:py-20 opacity-0">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="bg-gray-100 dark:bg-zinc-900 rounded-2xl py-20 text-center">
+            <h2 className="text-4xl font-normal mb-4 dark:text-white">
             Ready to innovate your financial services?
           </h2>
           <Link 
@@ -180,6 +181,7 @@ export default function FinancialServicesPage() {
           >
             Start now
           </Link>
+        </div>
         </div>
       </section>
     </div>

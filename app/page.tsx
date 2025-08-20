@@ -71,7 +71,7 @@ export default function Home() {
               preload="metadata"
               className={`absolute inset-0 w-full h-full object-cover dark:hidden transition-opacity duration-500 ${videosLoaded ? 'opacity-100' : 'opacity-0'}`}
             >
-              <source src="/videos/landing-page-hero-animation-light-theme.mp4" type="video/mp4" />
+              <source src="/videos/landing-page-hero-animation-light-theme.webm" type="video/webm" />
             </video>
             {/* Dark theme video */}
             <video
@@ -83,7 +83,7 @@ export default function Home() {
               preload="metadata"
               className={`absolute inset-0 w-full h-full object-cover hidden dark:block transition-opacity duration-500 ${videosLoaded ? 'opacity-100' : 'opacity-0'}`}
             >
-              <source src="/videos/landing-page-hero-animation-dark-them.mp4" type="video/mp4" />
+              <source src="/videos/landing-page-hero-animation-dark-them.webm" type="video/webm" />
             </video>
             {/* Overlay for better text readability */}
             <div className="absolute inset-0 bg-white/40 dark:bg-black/40"></div>
@@ -232,7 +232,7 @@ export default function Home() {
       {/* Partner Logos Section - Full width with animated logos */}
       <section ref={addSectionRef} className="py-8 md:py-16 overflow-hidden opacity-0">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="flex items-center justify-center gap-x-4 md:gap-x-8 flex-wrap md:flex-nowrap md:min-w-max">
+          <div className="flex items-center justify-center gap-x-4 md:gap-x-6 flex-wrap md:flex-nowrap md:min-w-max">
             {/* SirkupAI Partner logos with staggered slide animation */}
             {[
               { name: 'NestHive', file: 'nesthive-logo.png', delay: '0s' },
@@ -243,13 +243,13 @@ export default function Home() {
             ].map((partner) => (
               <div 
                 key={partner.name} 
-                className="relative h-16 md:h-24 flex items-center flex-shrink-0"
+                className="relative h-20 md:h-32 flex items-center flex-shrink-0"
                 style={{
                   animation: 'slideUpFade 8s ease-in-out infinite',
                   animationDelay: partner.delay
                 }}
               >
-                <div className="relative w-32 md:w-48 h-16 md:h-24">
+                <div className="relative w-40 md:w-56 h-20 md:h-32">
                   <Image
                     src={`/partners/${partner.file}`}
                     alt={partner.name}
@@ -503,7 +503,7 @@ export default function Home() {
             <h2 className="text-4xl font-normal mb-4 dark:text-white">
               Guides and resources for<br />integrating AI into your business
             </h2>
-            <Link href="/solutions" className="inline-block mt-6 text-sm font-medium text-black dark:text-white hover:underline">
+            <Link href="/solutions" className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-black dark:text-white border border-gray-300 dark:border-zinc-700 rounded-full hover:bg-gray-50 dark:hover:bg-zinc-800 transition-colors">
               Learn more
             </Link>
           </div>
