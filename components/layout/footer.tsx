@@ -9,11 +9,11 @@ const Footer = () => {
             <h3 className="text-sm font-medium text-gray-900 dark:text-white mb-4">Our Research</h3>
             <ul className="space-y-3">
               <li><a href="#" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Research Index</a></li>
-              <li><a href="#" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Research Overview</a></li>
+              <li><a href="/research" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Research Overview</a></li>
             </ul>
-            <h3 className="text-sm font-medium text-gray-900 mb-4 mt-8">Company</h3>
+            <h3 className="text-sm font-medium text-gray-900 dark:text-white mb-4 mt-8">Company</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">About Us</a></li>
+              <li><a href="/about" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">About Us</a></li>
               <li><a href="#" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Careers</a></li>
               
             </ul>
@@ -24,7 +24,7 @@ const Footer = () => {
             <h3 className="text-sm font-medium text-gray-900 dark:text-white mb-4">SirkupAI</h3>
             <ul className="space-y-3">
               <li><a href="#" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Explore SirkupAI</a></li>
-              <li><a href="#" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Team</a></li>
+              <li><a href="/team" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Team</a></li>
               <li><a href="#" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Enterprise</a></li>
               <li><a href="#" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Education</a></li>
             </ul>
@@ -35,8 +35,9 @@ const Footer = () => {
             <h3 className="text-sm font-medium text-gray-900 dark:text-white mb-4">For Business</h3>
             <ul className="space-y-3">
               <li><a href="#" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Business Overview</a></li>
-              <li><a href="#" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Solutions</a></li>
-              <li><a href="#" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Contact Sales</a></li>
+              <li><a href="/solutions" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Solutions</a></li>
+              <li><a href="/services" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Our Services</a></li>
+              <li><a href="/contact" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Contact Sales</a></li>
             </ul>
             
           </div>
@@ -45,9 +46,7 @@ const Footer = () => {
           <div>
             <h3 className="text-sm font-medium text-gray-900 dark:text-white mb-4">Terms & Policies</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Terms of Use</a></li>
               <li><a href="#" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Privacy Policy</a></li>
-              <li><a href="#" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Other Policies</a></li>
             </ul>
             
           </div>
