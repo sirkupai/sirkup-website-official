@@ -105,20 +105,20 @@ const Sidebar = ({ isCollapsed, isHidden = false, isMobile = false, onToggle }: 
         {/* Header with logo and toggle - desktop only */}
         {!isMobile ? (
           <div className={cn(
-            "flex items-center h-[88px] transition-all duration-300 relative z-10 px-3 py-3",
+            "flex items-center justify-center h-[88px] transition-all duration-300 relative z-10 px-5",
             !headerVisible && "-translate-y-full"
           )}>
             {/* Logo - show when not collapsed on desktop */}
             {!isCollapsed && (
               <Link 
                 href="/" 
-                className="flex items-center h-12 flex-1"
+                className="flex items-center h-12 mx-auto"
               >
                 <Image
-                  src="/sirkupai-logo.png"
+                  src="/SirkupAI-logo-black.png"
                   alt="SirkupAI"
-                  width={180}
-                  height={60}
+                  width={40}
+                  height={40}
                   className="object-contain dark:invert relative z-20"
                   priority
                 />
@@ -127,7 +127,7 @@ const Sidebar = ({ isCollapsed, isHidden = false, isMobile = false, onToggle }: 
             
             {/* Toggle button - position based on state */}
             <div className={cn(
-              "flex items-center h-10",
+              "absolute right-5 flex items-center h-10",
               isCollapsed && "mx-auto"
             )}>
               <SidebarToggle 

@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import ChatWidget from "@/components/ChatWidget"
 
 export default function EngineeringPage() {
   const sectionsRef = useRef<HTMLElement[]>([])
@@ -173,17 +174,20 @@ export default function EngineeringPage() {
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="bg-gray-100 dark:bg-zinc-900 rounded-2xl py-20 text-center">
             <h2 className="text-4xl font-normal mb-4 dark:text-white">
-            Ready to accelerate your engineering team?
-          </h2>
-          <Link 
-            href="/contact" 
-            className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-white bg-black dark:bg-white dark:text-black rounded-full hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors"
-          >
-            Start now
-          </Link>
-        </div>
+              Ready to accelerate your engineering team?
+            </h2>
+            <Link 
+              href="/contact" 
+              className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-white bg-black dark:bg-white dark:text-black rounded-full hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors"
+            >
+              Start now
+            </Link>
+          </div>
         </div>
       </section>
+
+      {/* ✅ Add ChatWidget here */}
+      <ChatWidget />
     </div>
   )
 }

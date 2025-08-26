@@ -4,106 +4,100 @@ import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 
 const teamMembers = {
-  ceo: {
-    name: 'Bilal Ahmad',
-    title: 'CEO and Co-Founder',
-    description: 'Bilal sets direction and partnerships. He aligns R&D with client needs and keeps the studio focused on production-worthy results. His work centers on market fit, responsible deployment, and sustainable growth.',
-    expertise: ['Strategic Direction', 'Partnerships', 'Market Fit', 'Responsible AI']
-  },
   executives: [
+    {
+      name: 'Bilal Ahmad',
+      title: 'CEO and Co-Founder',
+      linkedin: "#",
+    },
     {
       name: 'Ahmed Ghulam',
       title: 'Co-founder & Strategy and Operations Lead',
-      description: 'Ahmed steers studio operations and delivery. He brings an operator lens to scope, metrics, and risk, turning research ideas into run-books.',
-      expertise: ['Operations', 'Delivery', 'Process Design', 'Risk Management']
+      linkedin: "#",
     },
     {
       name: 'Mizab Ghulam Nabi',
       title: 'CTO',
-      description: 'Mizab leads our technology strategy and architecture, ensuring we build scalable, reliable AI systems that deliver real value.',
-      expertise: ['Technology Strategy', 'System Architecture', 'AI Infrastructure', 'Technical Leadership']
+      linkedin: "#",
     },
     {
-      name: 'Choudhary Hashir',
+      name: 'Chaudhary Hashir',
       title: 'CHRO',
-      description: 'Hashir leads our human resources initiatives, building a culture of innovation and ensuring we attract and retain top talent.',
-      expertise: ['Human Resources', 'Talent Management', 'Culture Development', 'Organizational Design']
+      linkedin: "#",
     },
     {
       name: 'Umer Azam',
       title: 'CCO',
-      description: 'Umer drives our commercial strategy, ensuring we deliver value to clients while growing sustainably.',
-      expertise: ['Commercial Strategy', 'Revenue Growth', 'Client Relationships', 'Market Expansion']
+      linkedin: "#",
     },
     {
       name: 'Anees Qureshi',
       title: 'Team Lead & Business Development',
-      description: 'Anees leads go-to-market and client success. He frames problems, clarifies constraints, and scopes pilots that show value quickly.',
-      expertise: ['Go-to-Market', 'Client Success', 'Business Development', 'Pilot Programs']
-    }
+      linkedin: "#",
+    },
+    {
+      name: 'Raja Bilal',
+      title: 'Head of Recovery Department',
+      linkedin: "#",
+    },
   ],
   team: [
     {
       name: 'Muhammad Ammar Khan',
       title: 'Creative Director',
-      description: 'Ammar shapes our creative vision, ensuring our brand and solutions communicate effectively across all touchpoints.',
-      expertise: ['Creative Strategy', 'Brand Development', 'Design Systems', 'Visual Communication']
+      linkedin: "https://www.linkedin.com/in/ammar",
     },
     {
       name: 'Sara Azam',
       title: 'HR / Finance Head',
-      description: 'Sara manages our financial operations and supports HR initiatives, ensuring sustainable growth and operational excellence.',
-      expertise: ['Financial Management', 'HR Operations', 'Compliance', 'Resource Planning']
+      linkedin: "#",
     },
     {
       name: 'Iman Ammar Khan',
       title: 'Head of Content Department',
-      description: 'Iman leads our content strategy and production, creating engaging narratives that showcase our AI innovations.',
-      expertise: ['Content Strategy', 'Content Production', 'Editorial Direction', 'Brand Messaging']
+      linkedin: "https://www.linkedin.com/in/iman-humayun/",
     },
     {
       name: 'Syed Ali Ahzum Bukhari',
       title: 'AI Expert',
-      description: 'Ali specializes in developing and implementing cutting-edge AI solutions, bringing deep technical expertise to our projects.',
-      expertise: ['Machine Learning', 'Deep Learning', 'AI Architecture', 'Model Optimization']
+      linkedin: "https://www.linkedin.com/in/syedaliahzum/",
     },
     {
       name: 'Siyam Haider',
       title: 'AI Expert',
-      description: 'Siyam drives AI innovation, focusing on practical applications that deliver measurable business value for our clients.',
-      expertise: ['AI Solutions', 'Natural Language Processing', 'Computer Vision', 'AI Integration']
-    },
-    {
-      name: 'Rimsha Rafique',
-      title: 'Front End Engineer',
-      description: 'Rimsha builds intuitive user interfaces that make our AI solutions accessible and user-friendly.',
-      expertise: ['Frontend Development', 'React', 'UI/UX Implementation', 'Web Performance']
-    },
-    {
-      name: 'Muskan Iqbal',
-      title: 'Associate Front-End Developer',
-      description: 'Muskan contributes to our frontend development efforts, creating responsive and engaging web experiences.',
-      expertise: ['Frontend Development', 'JavaScript', 'CSS', 'Responsive Design']
-    },
-    {
-      name: 'Salman Khan',
-      title: 'Content Engineer (Post-Production Specialist)',
-      description: 'Salman specializes in post-production workflows, ensuring our content meets the highest quality standards.',
-      expertise: ['Post-Production', 'Video Editing', 'Content Engineering', 'Quality Assurance']
-    },
-    {
-      name: 'Moiz Hassan',
-      title: 'Content Engineer (Post-Production Specialist)',
-      description: 'Moiz enhances our content production pipeline with expertise in post-production and technical workflows.',
-      expertise: ['Post-Production', 'Motion Graphics', 'Content Engineering', 'Technical Workflows']
+      linkedin: "https://www.linkedin.com/in/siyam-haider/",
     },
     {
       name: 'Frederick Samanga',
       title: 'AI Automation Developer',
-      description: 'Frederick specializes in building AI-powered automation solutions and developing intelligent systems that streamline business processes.',
-      expertise: ['AI Automation', 'Python', 'Machine Learning', 'Process Optimization']
-    }
-  ]
+      linkedin: "#",
+    },
+    {
+      name: 'Muhammad Ahmad',
+      title: 'AI Automation Developer',
+      linkedin: "https://www.linkedin.com/in/muhammad-ahmad-768a62262/",
+    },
+    {
+      name: 'Rimsha Rafique',
+      title: 'Front End Engineer',
+      linkedin: "https://www.linkedin.com/in/rimsha-rafique-99537a108/",
+    },
+    {
+      name: 'Moiz Hassan',
+      title: 'Content Engineer (Post-Production Specialist)',
+      linkedin: "#",
+    },
+    {
+      name: 'Muskan Iqbal',
+      title: 'Associate Front-End Developer',
+      linkedin: "https://www.linkedin.com/in/muskan-yousafzai-iqbal/",
+    },
+    {
+      name: 'Wania Hamid',
+      title: 'Junior Graphic Designer',
+      linkedin: "https://www.linkedin.com/in/wania-hamid-67620a24a/",
+    },
+  ],
 }
 
 export default function TeamPage() {
@@ -113,9 +107,7 @@ export default function TeamPage() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in-up')
-          }
+          if (entry.isIntersecting) entry.target.classList.add('animate-fade-in-up')
         })
       },
       { threshold: 0.1 }
@@ -129,14 +121,13 @@ export default function TeamPage() {
   }, [])
 
   const addSectionRef = (el: HTMLElement | null) => {
-    if (el && !sectionsRef.current.includes(el)) {
-      sectionsRef.current.push(el)
-    }
+    if (el && !sectionsRef.current.includes(el)) sectionsRef.current.push(el)
   }
 
   return (
     <div className="min-h-screen bg-white dark:bg-black">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
+        
         {/* Hero Section */}
         <section ref={addSectionRef} className="py-12 md:py-20 text-center opacity-0">
           <div className="max-w-4xl mx-auto">
@@ -150,80 +141,42 @@ export default function TeamPage() {
           </div>
         </section>
 
-        {/* CEO Section - Bila at the top */}
-        <section ref={addSectionRef} className="pb-12 md:pb-20 opacity-0">
-          <div className="max-w-5xl mx-auto">
-            <div className="relative">
-              {/* Main card - consistent with site style */}
-              <div className="relative bg-white dark:bg-black border border-gray-200 dark:border-zinc-800 rounded-lg p-8 md:p-12">
-                <div className="text-center">
-                  {/* Name and Title */}
-                  <h2 className="text-3xl md:text-4xl font-normal text-black dark:text-white mb-2">
-                    {teamMembers.ceo.name}
-                  </h2>
-                  <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
-                    {teamMembers.ceo.title}
-                  </p>
-
-                  {/* Description */}
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl mx-auto mb-8">
-                    {teamMembers.ceo.description}
-                  </p>
-
-                  {/* Expertise Tags */}
-                  <div className="flex flex-wrap justify-center gap-2">
-                    {teamMembers.ceo.expertise.map((skill, index) => (
-                      <span 
-                        key={index}
-                        className="px-4 py-2 bg-gray-50 dark:bg-zinc-900 text-gray-600 dark:text-gray-400 text-sm rounded-full"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Executives Section - C-suite and Co-founders */}
+        {/* Executives Section */}
         <section ref={addSectionRef} className="pb-12 md:pb-20 opacity-0">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-normal text-black dark:text-white text-center mb-12">
-              Executive Leadership
+              Founders & Executives
             </h2>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
               {teamMembers.executives.map((member, index) => (
                 <div key={index} className="relative">
-                  {/* Card - consistent with site style */}
-                  <div className="relative bg-white dark:bg-black border border-gray-200 dark:border-zinc-800 rounded-lg p-6 md:p-8 h-full">
-                    <div>
-                      {/* Name and Title */}
-                      <h3 className="text-2xl font-normal text-black dark:text-white mb-1">
-                        {member.name}
-                      </h3>
-                      <p className="text-base text-gray-600 dark:text-gray-400 mb-4">
-                        {member.title}
-                      </p>
-
-                      {/* Description */}
-                      <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                        {member.description}
-                      </p>
-
-                      {/* Expertise Tags */}
-                      <div className="flex flex-wrap gap-2">
-                        {member.expertise.map((skill, skillIndex) => (
-                          <span 
-                            key={skillIndex}
-                            className="px-3 py-1.5 bg-gray-50 dark:bg-zinc-900 text-gray-600 dark:text-gray-400 text-xs rounded-full"
+                  <div className="relative bg-white dark:bg-zinc-900 border border-gray-200 dark:border-gray-700 rounded-xl p-6 md:p-8 h-full
+                          shadow-md dark:shadow-lg hover:shadow-xl dark:hover:shadow-2xl
+                          transition-shadow duration-300">
+                    <h3 className="font-semibold text-black dark:text-white mb-2 text-lg">{member.name}</h3>
+                    <p className="text-sm md:text-base italic text-gray-600 dark:text-gray-400 mb-4">{member.title}</p>
+                    {member.linkedin && (
+                      <div className="mt-4 flex items-center">
+                        <a
+                          href={member.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center text-black dark:text-white hover:opacity-70 transition-opacity"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                            className="mr-2"
                           >
-                            {skill}
-                          </span>
-                        ))}
+                            <path d="M4.98 3.5C3.34 3.5 2 4.84 2 6.48s1.34 2.98 2.98 2.98 2.98-1.34 2.98-2.98S6.62 3.5 4.98 3.5zm.02 5.5H2V21h5V9h-2zm7.5 0h-2v12h5v-6.5c0-1.93 3-2.08 3 0V21h5v-7.5c0-5.08-5.5-4.89-5-2.39V9h-2z"/>
+                          </svg>
+                          <span className="text-sm font-medium">LinkedIn</span>
+                        </a>
                       </div>
-                    </div>
+                    )}
                   </div>
                 </div>
               ))}
@@ -231,43 +184,40 @@ export default function TeamPage() {
           </div>
         </section>
 
-        {/* Team Members Section */}
+        {/* Team Section */}
         <section ref={addSectionRef} className="pb-12 md:pb-20 opacity-0">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-normal text-black dark:text-white text-center mb-12">
-              Our Team
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <h2 className="text-2xl md:text-3xl font-normal text-black dark:text-white text-center mb-12">Team</h2>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {teamMembers.team.map((member, index) => (
                 <div key={index} className="relative">
-                  {/* Card - consistent with site style */}
-                  <div className="relative bg-white dark:bg-black border border-gray-200 dark:border-zinc-800 rounded-lg p-6 md:p-8 h-full">
-                    <div>
-                      {/* Name and Title */}
-                      <h3 className="text-2xl font-normal text-black dark:text-white mb-1">
-                        {member.name}
-                      </h3>
-                      <p className="text-base text-gray-600 dark:text-gray-400 mb-4">
-                        {member.title}
-                      </p>
-
-                      {/* Description */}
-                      <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                        {member.description}
-                      </p>
-
-                      {/* Expertise Tags */}
-                      <div className="flex flex-wrap gap-2">
-                        {member.expertise.map((skill, skillIndex) => (
-                          <span 
-                            key={skillIndex}
-                            className="px-3 py-1.5 bg-gray-50 dark:bg-zinc-900 text-gray-600 dark:text-gray-400 text-xs rounded-full"
+                  <div className="relative bg-white dark:bg-zinc-900 border border-gray-200 dark:border-gray-700 rounded-xl p-6 md:p-8 h-full
+                          shadow-md dark:shadow-lg hover:shadow-xl dark:hover:shadow-2xl
+                          transition-shadow duration-300">
+                    <h3 className="font-semibold text-black dark:text-white mb-2 text-lg">{member.name}</h3>
+                    <p className="text-base text-gray-600 dark:text-gray-400 mb-4">{member.title}</p>
+                    {member.linkedin && (
+                      <div className="mt-4 flex items-center">
+                        <a
+                          href={member.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center text-black dark:text-white hover:opacity-70 transition-opacity"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                            className="mr-2"
                           >
-                            {skill}
-                          </span>
-                        ))}
+                            <path d="M4.98 3.5C3.34 3.5 2 4.84 2 6.48s1.34 2.98 2.98 2.98 2.98-1.34 2.98-2.98S6.62 3.5 4.98 3.5zm.02 5.5H2V21h5V9h-2zm7.5 0h-2v12h5v-6.5c0-1.93 3-2.08 3 0V21h5v-7.5c0-5.08-5.5-4.89-5-2.39V9h-2z"/>
+                          </svg>
+                          <span className="text-sm font-medium">LinkedIn</span>
+                        </a>
                       </div>
-                    </div>
+                    )}
                   </div>
                 </div>
               ))}
@@ -285,21 +235,21 @@ export default function TeamPage() {
               Our leadership team combines deep technical expertise with real business experience, ensuring every solution actually solves real problems.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-              <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
+              <div className="bg-white dark:bg-zinc-900 p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
                 <h3 className="font-semibold text-black dark:text-white mb-2 text-lg">Operator-Led</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
                   Multi-business operators building real solutions, not slideware
                 </p>
               </div>
 
-              <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
+              <div className="bg-white dark:bg-zinc-900 p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
                 <h3 className="font-semibold text-black dark:text-white mb-2 text-lg">R&D-First</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
                   Closing the gap between promising models and production systems
                 </p>
               </div>
 
-              <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
+              <div className="bg-white dark:bg-zinc-900 p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
                 <h3 className="font-semibold text-black dark:text-white mb-2 text-lg">Responsible AI</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
                   Safety, privacy, and human oversight as non-negotiable standards
@@ -309,30 +259,25 @@ export default function TeamPage() {
           </div>
         </section>
 
-        {/* Work With Us Section - Independent */}
+        {/* Work With Us Section */}
         <section ref={addSectionRef} className="py-12 md:py-20 opacity-0">
           <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="bg-gray-100 dark:bg-zinc-900 rounded-2xl py-20 text-center">
-            <h2 className="text-4xl font-normal mb-4 dark:text-white">
-              Join us in building the future
-            </h2>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/contact" 
-                className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-white bg-black dark:bg-white dark:text-black rounded-full hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors"
-              >
-                Work with us
-              </Link>
-              <Link 
-                href="/solutions" 
-                className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-black dark:text-white border border-gray-300 dark:border-zinc-700 rounded-full hover:bg-gray-50 dark:hover:bg-zinc-800 transition-colors"
-              >
-                Explore solutions
-              </Link>
+            <div className="bg-gray-100 dark:bg-zinc-900 rounded-2xl py-20 text-center">
+              <h2 className="text-4xl font-normal mb-4 dark:text-white">
+                Join us in building the future
+              </h2>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-white bg-black dark:bg-white dark:text-black rounded-full hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors">
+                  Work with us
+                </Link>
+                <Link href="/solutions" className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-black dark:text-white border border-gray-300 dark:border-zinc-700 rounded-full hover:bg-gray-50 dark:hover:bg-zinc-800 transition-colors">
+                  Explore solutions
+                </Link>
+              </div>
             </div>
           </div>
-          </div>
         </section>
+
       </div>
     </div>
   )
