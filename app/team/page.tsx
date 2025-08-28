@@ -33,7 +33,7 @@ const teamMembers = {
     {
       name: 'Anees Qureshi',
       title: 'Team Lead & Business Development',
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/anees-qureshi/",
     },
     {
       name: 'Raja Bilal',
@@ -45,12 +45,12 @@ const teamMembers = {
     {
       name: 'Muhammad Ammar Khan',
       title: 'Creative Director',
-      linkedin: "https://www.linkedin.com/in/ammar",
+      linkedin: "https://www.linkedin.com/in/ammardezigns",
     },
     {
       name: 'Sara Azam',
       title: 'HR / Finance Head',
-      linkedin: "#",
+      linkedin: "http://linkedin.com/in/sara-azam",
     },
     {
       name: 'Iman Ammar Khan',
@@ -70,6 +70,11 @@ const teamMembers = {
     {
       name: 'Frederick Samanga',
       title: 'AI Automation Developer',
+      linkedin: "#",
+    },
+    {
+      name: 'Ponraviraj',
+      title: 'AI Engineer',
       linkedin: "#",
     },
     {
