@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import ChatWidget from "@/components/ChatWidget"
 
 export default function SalesMarketingPage() {
   const sectionsRef = useRef<HTMLElement[]>([])
@@ -226,6 +227,8 @@ export default function SalesMarketingPage() {
         </div>
         </div>
       </section>
+        {/* ✅ Add ChatWidget here */}
+        <ChatWidget />
     </div>
   )
 }

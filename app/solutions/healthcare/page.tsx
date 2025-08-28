@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import ChatWidget from "@/components/ChatWidget"
 
 export default function HealthcarePage() {
   const sectionsRef = useRef<HTMLElement[]>([])
@@ -184,6 +185,8 @@ export default function HealthcarePage() {
         </div>
         </div>
       </section>
+                    {/* ✅ Add ChatWidget here */}
+                    <ChatWidget />
     </div>
   )
 }
