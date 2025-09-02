@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { motion } from "framer-motion"
+import Image from 'next/image'
 export default function PricingPage() {
   const sectionsRef = useRef<HTMLElement[]>([])
 
@@ -159,7 +160,11 @@ export default function PricingPage() {
             {/* Card 1 */}
             <div className="bg-white dark:bg-zinc-800 rounded-2xl p-8 shadow-md border border-gray-200 dark:border-zinc-700 hover:shadow-xl transition-all duration-300 text-left flex flex-col">
                 <div className="flex items-center gap-3 mb-4">
-                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 dark:bg-zinc-800 text-lg">👥</span>
+                <img 
+                src="/images/1_HumanResourse.png" 
+                alt="HR Icon" 
+                className="w-10 h-10 dark:invert"
+                />
                 <h3 className="text-xl font-semibold text-black dark:text-white">HR Automations</h3>
                 </div>
                 <ul className="list-disc list-inside text-gray-600 dark:text-gray-400 space-y-2 flex-1">
@@ -172,7 +177,11 @@ export default function PricingPage() {
             {/* Card 2 */}
              <div className="bg-gray-50 dark:bg-zinc-700 rounded-2xl p-8 shadow-md border border-gray-200 dark:border-zinc-700 hover:shadow-xl transition-all duration-300 text-left flex flex-col">
                 <div className="flex items-center gap-3 mb-4">
-                💸
+                <img 
+                src="/images/1_Finance-Accounting.png" 
+                alt="Finance Icon" 
+                className="w-10 h-10 dark:invert"
+                />
                 <h3 className="text-xl font-semibold text-black dark:text-white">Finance & Accounting Automations</h3>
                 </div>
                 <ul className="list-disc list-inside text-gray-600 dark:text-gray-400 space-y-2 flex-1">
@@ -185,7 +194,11 @@ export default function PricingPage() {
             {/* Card 3 */}
              <div className="bg-gray-50/80 dark:bg-zinc-700 rounded-2xl p-8 shadow-md border border-gray-200 dark:border-zinc-700 hover:shadow-xl transition-all duration-300 text-left flex flex-col">
                 <div className="flex items-center gap-3 mb-4">
-                📣
+                <img 
+                src="/images/1_Media.png" 
+                alt="Media Icon" 
+                className="w-10 h-10 dark:invert"
+                />
                 <h3 className="text-xl font-semibold text-black dark:text-white">Media & Marketing Automations</h3>
                 </div>
                 <ul className="list-disc list-inside text-gray-600 dark:text-gray-400 space-y-2 flex-1">
@@ -198,7 +211,11 @@ export default function PricingPage() {
             {/* Card 4 (centered) */}
             <div className="md:col-span-1 md:col-start-1 bg-gray-50/60 dark:bg-zinc-600 rounded-2xl p-8 shadow-md border border-gray-200 dark:border-zinc-700 hover:shadow-xl transition-all duration-300 text-left flex flex-col">
                 <div className="flex items-center gap-3 mb-4">
-                🖥️
+                <img 
+                src="/images/1_InformationTech.png" 
+                alt="Finance Icon" 
+                className="w-10 h-10 dark:invert"
+                />
                 <h3 className="text-xl font-semibold text-black dark:text-white">IT & Operations Automations</h3>
                 </div>
                 <ul className="list-disc list-inside text-gray-600 dark:text-gray-400 space-y-2 flex-1">
@@ -211,7 +228,11 @@ export default function PricingPage() {
             {/* Card 5 (centered) */}
             <div className="md:col-span-1 md:col-start-2 bg-gray-100 dark:bg-zinc-500 rounded-2xl p-8 shadow-md border border-gray-200 dark:border-zinc-700 hover:shadow-xl transition-all duration-300 text-left flex flex-col">
                 <div className="flex items-center gap-3 mb-4">
-                📈
+                <img 
+                src="/images/1_Sales.png" 
+                alt="Sales Icon" 
+                className="w-10 h-10 dark:invert"
+                />
                 <h3 className="text-xl font-semibold text-black dark:text-white">Sales Automations</h3>
                 </div>
                 <ul className="list-disc list-inside text-gray-600 dark:text-gray-400 space-y-2 flex-1">
@@ -228,52 +249,25 @@ export default function PricingPage() {
             How Our Process Works
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-
-            {/* Step 1 */}
-            <div className="relative bg-white dark:bg-zinc-800 rounded-2xl shadow-md overflow-hidden flex flex-col items-center">
-                <div className="w-full h-3 bg-black"></div>
-                <div className="p-6">
-                <h3 className="text-lg font-semibold text-black dark:text-white mt-2">Discovery</h3>
-                <p className="text-gray-600 dark:text-gray-300 mt-3 text-sm">
-                    We assess your existing workflows and identify automation opportunities.
-                </p>
-                </div>
-            </div>
-
-            {/* Step 2 */}
-            <div className="relative bg-white dark:bg-zinc-800 rounded-2xl shadow-md overflow-hidden flex flex-col items-center">
-                <div className="w-full h-3 bg-gray-500"></div>
-                <div className="p-6">
-                <h3 className="text-lg font-semibold text-black dark:text-white mt-2">Design & Development</h3>
-                <p className="text-gray-600 dark:text-gray-300 mt-3 text-sm">
-                    Tailored automation workflows designed to fit your business processes.
-                </p>
-                </div>
-            </div>
-
-            {/* Step 3 */}
-            <div className="relative bg-white dark:bg-zinc-800 rounded-2xl shadow-md overflow-hidden flex flex-col items-center">
-                <div className="w-full h-3 bg-black"></div>
-                <div className="p-6">
-                <h3 className="text-lg font-semibold text-black dark:text-white mt-2">Implementation</h3>
-                <p className="text-gray-600 dark:text-gray-300 mt-3 text-sm">
-                    Smooth deployment with minimal disruption to daily operations.
-                </p>
-                </div>
-            </div>
-
-            {/* Step 4 */}
-            <div className="relative bg-white dark:bg-zinc-800 rounded-2xl shadow-md overflow-hidden flex flex-col items-center">
-                <div className="w-full h-3 bg-gray-500"></div>
-                <div className="p-6">
-                <h3 className="text-lg font-semibold text-black dark:text-white mt-2">Training & Support</h3>
-                <p className="text-gray-600 dark:text-gray-300 mt-3 text-sm">
-                    Hands-on training and continuous optimization for long-term success.
-                </p>
-                </div>
-            </div>
-
+            <div className="relative w-full max-w-4xl mx-auto mb-8">
+            <Image
+                src="/images/work-07.png"
+                alt="Process Flow"
+                className="w-[800px] h-auto mx-auto object-contain rounded-lg dark:hidden"
+                width={1000}
+                height={600}
+                quality={100}
+                priority
+            />
+            <Image
+                src="/images/work-08.png"
+                alt="Process Flow"
+                className="w-[800px] h-auto mx-auto object-contain rounded-lg hidden dark:block"
+                width={1000}
+                height={600}
+                quality={100}
+                priority
+                />
             </div>
         </div>
     </section>

@@ -32,18 +32,38 @@ export default function SalesMarketingPage() {
   }
 
   const whychoose = [
-    { title: "Structured Learning Programs", description: "Step-by-step courses designed to take you from beginner to expert in AI technologies" },
-    { title: "Live Workshops", description: "Interactive sessions with industry experts and hands-on practice" },
-    { title: "Community-Driven Learning", description: "Collaborative learning environment with peers and mentors" },
-    { title: "Business Applications", description: "Real-world AI monetization and automation strategies" },
-    { title: "Certification Programs", description: "Industry-recognized credentials to advance your career" },
-    { title: "24/7 Access", description: "Learn at your own pace with unlimited platform access" },
+    { title: "Structured Learning Programs", 
+      icon: "/images/icon_Number.png",
+      description: "Step-by-step courses designed to take you from beginner to expert in AI technologies" },
+    { title: "Live Workshops",
+      icon: "/images/icon-02.png",
+      description: "Interactive sessions with industry experts and hands-on practice" },
+    { title: "Community-Driven Learning", 
+      icon: "/images/icon-03.png",
+      description: "Collaborative learning environment with peers and mentors" },
+    { title: "Business Applications",
+      icon: "/images/icon-04.png",
+      description: "Real-world AI monetization and automation strategies" },
+    { title: "Certification Programs",
+      icon: "/images/icon-05.png",
+      description: "Industry-recognized credentials to advance your career" },
+    { title: "24/7 Access",
+      icon: "/images/icon-06.png",
+      description: "Learn at your own pace with unlimited platform access" },
   ]
    const join = [
-    { title: "Active Learning Community", description: "Connect with peers, share insights, and learn together" },
-    { title: "Expert Mentorship", description: "Get guidance from industry professionals and AI experts" },
-    { title: "Live Q&A Sessions", description: "Regular interactive sessions to address your questions" },
-    { title: "Resource Library", description: "Access to extensive collection of AI tools and resources" },
+    { title: "Active Learning Community", 
+      icon: "/images/icon-09.png",
+      description: "Connect with peers, share insights, and learn together" },
+    { title: "Expert Mentorship", 
+      icon: "/images/icon-10.png",
+      description: "Get guidance from industry professionals and AI experts" },
+    { title: "Live Q&A Sessions", 
+      icon: "/images/icon-11.png",
+      description: "Regular interactive sessions to address your questions" },
+    { title: "Resource Library", 
+      icon: "/images/icon-12.png",
+      description: "Access to extensive collection of AI tools and resources" },
   ]
 
   const stats = [
@@ -143,6 +163,12 @@ export default function SalesMarketingPage() {
                   key={index}
                   className="bg-gray-100 dark:bg-zinc-900 rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-zinc-700 hover:-translate-y-1"
                 >
+                  {/* Icon above title */}
+                  <img
+                  src={w.icon}
+                  alt={w.title}
+                  className="mx-auto mb-4 h-12 w-12 dark:invert"
+                  />
                   <h3 className="text-lg font-semibold text-gray-700 dark:text-white">{w.title}</h3>
                   <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">{w.description}</p>
                 </div>
@@ -275,6 +301,12 @@ export default function SalesMarketingPage() {
                   key={index}
                   className="bg-gray-100 dark:bg-zinc-900 rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-zinc-700 hover:-translate-y-1"
                 >
+                  {/* Icon above title */}
+                  <img
+                  src={join.icon}
+                  alt={join.title}
+                  className="mx-auto mb-4 h-12 w-12 dark:invert"
+                  />
                   <h3 className="text-lg font-semibold text-gray-700 dark:text-white">{join.title}</h3>
                   <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">{join.description}</p>
                 </div>
