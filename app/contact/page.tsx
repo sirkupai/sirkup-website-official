@@ -166,7 +166,7 @@ export default function ContactPage() {
           </div>
 
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+             <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
               Can you share more about your business needs and challenges?
             </label>
             <Textarea
@@ -190,7 +190,7 @@ export default function ContactPage() {
           </div>
         </form>
 
-        <div className="mt-12 text-center">
+        {/* <div className="mt-12 text-center">
           <p className="text-sm text-gray-600 dark:text-gray-400">
             For other inquiries, visit our{' '}
             <a href="/help" className="text-blue-600 dark:text-blue-400 hover:underline">
@@ -198,7 +198,7 @@ export default function ContactPage() {
             </a>
             .
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   )

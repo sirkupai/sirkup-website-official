@@ -251,19 +251,19 @@ export default function PricingPage() {
 
             <div className="relative w-full max-w-4xl mx-auto mb-8">
             <Image
-                src="/images/work-07.png"
+                src="/images/workflow-07.png"
                 alt="Process Flow"
-                className="w-[800px] h-auto mx-auto object-contain rounded-lg dark:hidden"
-                width={1000}
+                className="w-full h-auto object-contain rounded-lg dark:hidden"
+                width={1200}
                 height={600}
                 quality={100}
                 priority
             />
             <Image
-                src="/images/work-08.png"
+                src="/images/workflow-white-08.png"
                 alt="Process Flow"
-                className="w-[800px] h-auto mx-auto object-contain rounded-lg hidden dark:block"
-                width={1000}
+                className="w-full h-auto object-contain rounded-lg hidden dark:block"
+                width={1200}
                 height={600}
                 quality={100}
                 priority
