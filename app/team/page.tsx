@@ -21,7 +21,7 @@ const teamMembers = {
       linkedin: "#",
     },
     {
-      name: 'Chaudhary Hashir',
+      name: 'Hashir Ahmed',
       title: 'CHRO',
       linkedin: "#",
     },
