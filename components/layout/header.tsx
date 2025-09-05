@@ -45,10 +45,10 @@ const Header = ({ isMobile = false, sidebarHidden = true, onMenuClick }: HeaderP
           {/* Mobile Layout: Always show logo on left and toggle on right */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/sirkupai-logo.png"
+              src="/SirkupAI-logo-black.png"
               alt="SirkupAI"
-              width={120}
-              height={32}
+              width={35}
+              height={35}
               className="object-contain dark:invert"
               priority
             />
@@ -74,9 +74,9 @@ const Header = ({ isMobile = false, sidebarHidden = true, onMenuClick }: HeaderP
                 />
                 <Link href="/" className="flex items-center">
                   <Image
-                    src="/sirkupai-logo.png"
+                    src="/SirkupAI-logo-black.png"
                     alt="SirkupAI"
-                    width={150}
+                    width={40}
                     height={40}
                     className="object-contain dark:invert"
                     priority

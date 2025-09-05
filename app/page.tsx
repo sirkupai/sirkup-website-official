@@ -47,7 +47,27 @@ export default function Home() {
     const timer = setTimeout(loadVideos, 100)
     return () => clearTimeout(timer)
   }, [])
+// iOS autoplay handling
+  useEffect(() => {
+    const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent)
 
+    if (isiOS) {
+      const tryPlay = (video: HTMLVideoElement | null) => {
+        if (video) {
+          const playPromise = video.play()
+          if (playPromise !== undefined) {
+            playPromise.catch(() => {
+              // iOS prevented autoplay → fallback: hide video
+              video.style.display = "none"
+            })
+          }
+        }
+      }
+
+      tryPlay(lightVideoRef.current)
+      tryPlay(darkVideoRef.current)
+    }
+  }, [])
   const addSectionRef = (el: HTMLElement | null) => {
     if (el && !sectionsRef.current.includes(el)) {
       sectionsRef.current.push(el)
@@ -72,6 +92,7 @@ export default function Home() {
               className={`absolute inset-0 w-full h-full object-cover dark:hidden transition-opacity duration-500 ${videosLoaded ? 'opacity-100' : 'opacity-0'}`}
             >
               <source src="/videos/landing-page-hero-animation-light-theme.webm" type="video/webm" />
+              <source src="/videos/animation-light-theme.mp4" type="video/mp4" />
             </video>
             {/* Dark theme video */}
             <video
@@ -83,7 +104,8 @@ export default function Home() {
               preload="metadata"
               className={`absolute inset-0 w-full h-full object-cover hidden dark:block transition-opacity duration-500 ${videosLoaded ? 'opacity-100' : 'opacity-0'}`}
             >
-              <source src="/videos/landing-page-hero-animation-dark-them.webm" type="video/webm" />
+              <source src="/videos/landing-page-hero-animation-dark-theme.webm" type="video/webm" />
+              <source src="animation-dark-theme.mp4" type="video/mp4" />
             </video>
             {/* Overlay for better text readability */}
             <div className="absolute inset-0 bg-white/40 dark:bg-black/40"></div>
@@ -314,7 +336,7 @@ export default function Home() {
               <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400">Callis</p>
             </Link>
 
-            <Link href="/solutions/rankingai" className="space-y-4 group cursor-pointer">
+            <Link href="#" className="space-y-4 group cursor-pointer">
               <div className="aspect-square rounded-2xl overflow-hidden relative transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl">
                 <Image
                   src="/images/rankingai-card.png"

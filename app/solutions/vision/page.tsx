@@ -23,7 +23,7 @@ const relatedProducts = [
     title: 'RankingAI',
     description: 'Real estate platform with natural language search capabilities',
     image: '/images/rankingai-card.png',
-    href: '/solutions/rankingai'
+    href: '#'
   }
 ]
 
@@ -89,14 +89,19 @@ export default function VisionPage() {
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 leading-relaxed text-center">
               Transform your creative vision into compelling visual narratives with advanced AI technology.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-100 px-8 py-3 rounded-full">
-                Get started →
-              </Button>
-              <Button variant="outline" className="border-gray-300 dark:border-gray-700 text-black dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 px-8 py-3 rounded-full">
-                Contact sales
-              </Button>
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-4">
+              <Link href="https://vision.sirkup.ai/">
+                <Button className="bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-100 px-6 py-3 text-sm font-medium rounded-md">
+                  Get started →
+                </Button>
+              </Link>
+              <Link href="/contact">
+                <Button variant="outline" className="border-gray-300 dark:border-gray-700 text-black dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 px-6 py-3 text-sm font-medium rounded-md">
+                  Contact sales
+                </Button>
+              </Link>
             </div>
+
           </div>
         </section>
       </div>
@@ -264,14 +269,7 @@ export default function VisionPage() {
             <p className="text-gray-600 dark:text-gray-400 mb-8">
               Join thousands of creators who are already using Vision to bring their ideas to life.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-100 px-8 py-3 rounded-full">
-                Start free trial
-              </Button>
-              <Button variant="outline" className="border-gray-300 dark:border-gray-700 text-black dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 px-8 py-3 rounded-full">
-                Schedule demo
-              </Button>
-            </div>
+            
           </div>
         </section>
 

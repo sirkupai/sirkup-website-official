@@ -82,7 +82,7 @@ export default function AboutPage() {
       {/* Service Verticals */}
       <section
         ref={addSectionRef}
-        className="relative pt-16 pb-20 px-4 md:px-8 opacity-0"
+        className="relative pt-10 pb-20 px-4 md:px-8 opacity-0"
       >
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-2xl md:text-4xl font-normal text-black dark:text-white mb-12">
@@ -103,11 +103,7 @@ export default function AboutPage() {
                 AI Education & Learning Platforms
               </h3>
               <p className="text-gray-600 dark:text-gray-400 text-center">
-                We develop subscription-based educational platforms and content ecosystems 
-                that democratise AI knowledge. Our flagship SirkupAI Academy delivers structured 
-                learning programs in prompt engineering, business automation, and AI monetization 
-                strategies through interactive courses, live workshops, and community-driven 
-                learning experiences.
+                We build subscription-based platforms that democratize AI knowledge through structured programs, interactive courses, and live workshops. Our flagship SirkupAI Academy empowers professionals and businesses with skills in prompt engineering, intelligent workflows, and AI monetization.
               </p>
             </div>
 
@@ -124,9 +120,7 @@ export default function AboutPage() {
                 Enterprise AI Solutions
               </h3>
               <p className="text-gray-600 dark:text-gray-400 text-center">
-                Our SaaS portfolio includes specialized tools designed to solve complex business 
-                challenges. Key products include Ranking.AI for SEO optimization, enabling SMEs 
-                to rank in AI Chatbots like ChatGPT, Gemini etc. in the evolving search landscape.
+                Our SaaS portfolio delivers specialized AI-driven tools that solve complex business challenges. Flagship product Ranking.AI enables SMEs to optimize visibility in conversational AI platforms like ChatGPT and Gemini, helping them stay competitive in the evolving digital landscape.
               </p>
             </div>
 
@@ -143,12 +137,7 @@ export default function AboutPage() {
                 Social Impact Technologies
               </h3>
               <p className="text-gray-600 dark:text-gray-400 text-center">
-                We partner with government institutions, inter-governmental agencies, and civil society 
-                organizations to develop AI systems that promote the use of AI for social justice causes 
-                ranging from fighting climate change to countering violent extremism; religious freedoms 
-                to countering gender-based violence. 
-                One of our initiatives, the AdalBot, provides AI-powered legal assistance for survivors, 
-                featuring multilingual support and trauma-informed design integrated with real-world legal workflows.
+                We partner with governments, agencies, and civil society to design AI systems that advance social good. Projects like AdalBot provide multilingual, trauma-informed legal assistance to survivors, addressing issues from climate action to gender-based violence.
               </p>
             </div>
           </div>
