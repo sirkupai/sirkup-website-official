@@ -23,7 +23,7 @@ const Footer = () => {
           <div>
             <h3 className="text-sm font-medium text-gray-900 dark:text-white mb-4">SirkupAI</h3>
             <ul className="space-y-3">
-              <li><a href="/explore-sirkupAi" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Explore SirkupAI</a></li>
+              <li><a href="/explore-sirkupAi" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Explore SirkupAI Vision</a></li>
               <li><a href="/team" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Team</a></li>
               <li><a href="/enterprise" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Enterprise</a></li>
               <li><a href="/education" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Education</a></li>

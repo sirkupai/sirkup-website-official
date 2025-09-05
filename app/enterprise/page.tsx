@@ -112,11 +112,6 @@ export default function SalesMarketingPage() {
                   Contact Sales
                 </Button>
               </Link>
-              <Link href="#">
-                <Button variant="outline" className="border-gray-300 dark:border-gray-700 text-black dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 px-6 py-3 text-sm font-medium rounded-md">
-                  Request Demo
-                </Button>
-              </Link>
             </div>
         </div>
       </section>
@@ -215,24 +210,24 @@ export default function SalesMarketingPage() {
                     </p>
                     {/* Feature grid */}
                    <ul className="list-none grid grid-cols-1 md:grid-cols-3 gap-4 pt-10 mb-8">
-                    <li className="before:content-['✔'] before:text-black dark:before:text-black before:mr-2 flex items-center">
+                    <li className="before:content-['✔'] before:text-black dark:before:text-white before:mr-2 dark:text-white flex items-center">
                         AI Search Optimization
                     </li>
-                    <li className="before:content-['✔'] before:text-black dark:before:text-black before:mr-2 flex items-center">
+                    <li className="before:content-['✔'] before:text-black dark:before:text-white before:mr-2 dark:text-white flex items-center">
                         Multi-platform Monitoring
                     </li>
-                    <li className="before:content-['✔'] before:text-black dark:before:text-black before:mr-2 flex items-center">
+                    <li className="before:content-['✔'] before:text-black dark:before:text-white before:mr-2 dark:text-white flex items-center">
                         Competitor Analysis
                     </li>
-                    <li className="before:content-['✔'] before:text-black dark:before:text-black before:mr-2 flex items-center">
+                    <li className="before:content-['✔'] before:text-black dark:before:text-white before:mr-2 dark:text-white flex items-center">
                         Content Recommendations
                     </li>
-                    <li className="before:content-['✔'] before:text-black dark:before:text-black before:mr-2 flex items-center">
+                    <li className="before:content-['✔'] before:text-black dark:before:text-white before:mr-2 dark:text-white flex items-center">
                         Performance Analytics
                     </li>
                     </ul>
                     {/* CTA button */}
-                    <Link href="/contact">
+                    <Link href="#">
                         <Button className="bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-100 px-6 py-3 text-sm font-medium rounded-md">
                         Try Ranking.AI
                         </Button>
@@ -281,11 +276,6 @@ export default function SalesMarketingPage() {
               <Link href="/contact">
                 <Button className="bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-100 px-6 py-3 text-sm font-medium rounded-md">
                   Contact Sales
-                </Button>
-              </Link>
-              <Link href="#">
-                <Button variant="outline" className="border-gray-300 dark:border-gray-700 text-black dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 px-6 py-3 text-sm font-medium rounded-md">
-                  Request Demo
                 </Button>
               </Link>
             </div>

@@ -53,7 +53,7 @@ export default function CareersForm() {
       )
 
       if (res.ok) {
-        setSuccess('Application submitted successfully ✅')
+        setSuccess('Application submitted successfully.')
         setFormData({
           firstName: '',
           lastName: '',

@@ -36,22 +36,22 @@ export default function PricingPage() {
     {
       title: 'Increase Productivity',
       description:
-        'Free up staff for strategic and creative tasks by automating repetitive workflows.'
+        'Free up staff for strategic and creative tasks by leveraging AI-powered workflows that handle repetitive processes with speed and accuracy.'
     },
     {
       title: 'Cost Efficiency',
       description:
-        'Cut overhead costs and reduce expensive errors linked to manual processes.'
+        'Cut overhead costs and minimize costly errors with cognitive process management that eliminates manual inefficiencies.'
     },
     {
       title: 'Better Compliance & Reporting',
       description:
-        'Ensure accuracy in regulatory filings and simplify audits with reliable, trackable automation.'
+        'Ensure accuracy in regulatory filings and simplify audits with AI-driven monitoring and reporting systems that provide reliable, transparent records.'
     },
     {
       title: 'Scalability',
       description:
-        'Grow without proportionally increasing headcount, using flexible automation that adapts as your business expands.'
+        'Grow without proportionally increasing headcount by adopting adaptive, AI-enabled operations that expand seamlessly with your business.'
     }
   ]
 
@@ -106,7 +106,7 @@ export default function PricingPage() {
       >
         <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-5xl font-normal text-black dark:text-white mb-6">
-            Automation Solutions for Businesses
+            Intelligent Workflows for Businesses
           </h2>
           <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 mb-6 md:mb-8 max-w-3xl mx-auto px-4">
             Enabling Efficiency, Accuracy, and Growth
@@ -116,7 +116,7 @@ export default function PricingPage() {
           </h3>
           <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 mb-6 md:mb-8 max-w-3xl mx-auto px-4">
             At Sirkup Digital, we help businesses unlock efficiency and growth
-            through intelligent automation. By reducing manual tasks, minimizing
+            through AI-powered workflow solutions. By reducing manual tasks, minimizing
             errors, and speeding up processes, we enable organizations to
             achieve more with less. Our tailored automation solutions streamline
             operations across HR, Finance, Marketing, Sales, and IT empowering
@@ -127,7 +127,7 @@ export default function PricingPage() {
         {/* Why Automate? */}
         <div className="max-w-6xl mx-auto">
           <h3 className="text-3xl md:text-4xl font-normal text-center text-black dark:text-white mb-12">
-            Why Automate?
+            Why Intelligent Workflows?
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {automate.map((automate, index) => (
@@ -151,7 +151,7 @@ export default function PricingPage() {
         <section ref={addSectionRef} className="relative pt-16 pb-20 px-4 md:px-8 text-center opacity-0">
         <div className="max-w-6xl mx-auto">
             <h2 className="text-2xl md:text-5xl font-normal text-black dark:text-white mb-12">
-            Our Automation Service Offerings
+            Our AI-Powered Business Solutions
             </h2>
 
             {/* Grid with equal height cards */}
@@ -168,9 +168,9 @@ export default function PricingPage() {
                 <h3 className="text-xl font-semibold text-black dark:text-white">HR Automations</h3>
                 </div>
                 <ul className="list-disc list-inside text-gray-600 dark:text-gray-400 space-y-2 flex-1">
-                <li>Recruitment Automation: AI-powered resume parsing, interview scheduling, and seamless onboarding.</li>
-                <li>Payroll Automation: Accurate salary processing, benefits administration, and compliance reporting.</li>
-                <li>Employee Self-Service Portals: Streamlined leave requests, expense claims, and digital document management.</li>
+                <li>AI-Enhanced Talent Acquisition: Intelligent resume parsing, interview coordination, and seamless digital onboarding.</li>
+                <li>Smart Payroll & Compliance: Precise salary execution, benefits administration, and regulatory reporting.</li>
+                <li>Employee Self-Service Platforms: Unified portals for leave requests, expense claims, and secure document management.</li>
                 </ul>
             </div>
 
@@ -182,12 +182,12 @@ export default function PricingPage() {
                 alt="Finance Icon" 
                 className="w-10 h-10 dark:invert"
                 />
-                <h3 className="text-xl font-semibold text-black dark:text-white">Finance & Accounting Automations</h3>
+                <h3 className="text-xl font-semibold text-black dark:text-white">Financial Management & Accounting</h3>
                 </div>
                 <ul className="list-disc list-inside text-gray-600 dark:text-gray-400 space-y-2 flex-1">
-                <li>Invoice Processing: Automatic invoice generation, multi-level approval workflows, and real-time payment tracking.</li>
-                <li>Expense Management: Receipt scanning, policy compliance checks, and automated reimbursements.</li>
-                <li>Financial Reporting: On-demand dashboards and automated compliance-ready reports.</li>
+                <li>Intelligent Invoice Processing: Automated generation, approval workflows, and real-time payment reconciliation.</li>
+                <li>Expense Governance: AI-enabled receipt capture, policy compliance validation, and streamlined reimbursements.</li>
+                <li>Financial Intelligence & Reporting: Dynamic dashboards and compliance-ready insights for strategic decision-making.</li>
                 </ul>
             </div>
 
@@ -199,12 +199,12 @@ export default function PricingPage() {
                 alt="Media Icon" 
                 className="w-10 h-10 dark:invert"
                 />
-                <h3 className="text-xl font-semibold text-black dark:text-white">Media & Marketing Automations</h3>
+                <h3 className="text-xl font-semibold text-black dark:text-white">Marketing & Customer Experience</h3>
                 </div>
                 <ul className="list-disc list-inside text-gray-600 dark:text-gray-400 space-y-2 flex-1">
                 <li>Content Scheduling: Multi-platform post scheduling, campaign launches, and performance dashboards.</li>
                 <li>Customer Engagement: Intelligent chatbots, automated email sequences, and targeted customer journeys.</li>
-                <li>Lead Management: Automated lead scoring, qualification, and CRM integration.</li>
+                <li>Lead Management: Data-driven lead scoring, qualification, and seamless sales enablement.</li>
                 </ul>
             </div>
 
@@ -216,7 +216,7 @@ export default function PricingPage() {
                 alt="Finance Icon" 
                 className="w-10 h-10 dark:invert"
                 />
-                <h3 className="text-xl font-semibold text-black dark:text-white">IT & Operations Automations</h3>
+                <h3 className="text-xl font-semibold text-black dark:text-white">Technology & Operations</h3>
                 </div>
                 <ul className="list-disc list-inside text-gray-600 dark:text-gray-400 space-y-2 flex-1">
                 <li>Ticketing Systems: Automated support routing, escalation handling, and resolution tracking.</li>
@@ -226,18 +226,18 @@ export default function PricingPage() {
             </div>
 
             {/* Card 5 (centered) */}
-            <div className="md:col-span-1 md:col-start-2 bg-gray-100 dark:bg-zinc-500 rounded-2xl p-8 shadow-md border border-gray-200 dark:border-zinc-700 hover:shadow-xl transition-all duration-300 text-left flex flex-col">
+            <div className="md:col-span-1 md:col-start-2 bg-gray-100 dark:bg-zinc-600 rounded-2xl p-8 shadow-md border border-gray-200 dark:border-zinc-700 hover:shadow-xl transition-all duration-300 text-left flex flex-col">
                 <div className="flex items-center gap-3 mb-4">
                 <img 
                 src="/images/1_Sales.png" 
                 alt="Sales Icon" 
                 className="w-10 h-10 dark:invert"
                 />
-                <h3 className="text-xl font-semibold text-black dark:text-white">Sales Automations</h3>
+                <h3 className="text-xl font-semibold text-black dark:text-white">Sales Acceleration</h3>
                 </div>
                 <ul className="list-disc list-inside text-gray-600 dark:text-gray-400 space-y-2 flex-1">
                 <li>CRM Updates: Automatic activity logging, follow-up reminders, and sales pipeline visibility.</li>
-                <li>Proposal & Quotation Automation: Instant proposal generation, digital approvals, and e-signatures.</li>
+                <li>Proposal & Quotation Intelligence: Instant proposal generation, digital approvals, and e-signatures.</li>
                 </ul>
             </div>
             </div>
@@ -393,16 +393,16 @@ export default function PricingPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-12">
             {[
             {
-                title: "Expertise",
-                text: "Proven success delivering automation across diverse industries",
+                title: "Domain Expertise",
+                text: "Extensive experience delivering AI-powered workflow solutions across diverse industries, ensuring best practices and measurable outcomes.",
             },
             {
-                title: "Value-Focused",
-                text: "Clear ROI with solutions aligned to your growth objectives",
+                title: "Value-Driven Approach",
+                text: "Our solutions are designed to deliver clear ROI, aligning seamlessly with your strategic growth objectives and operational priorities.",
             },
             {
-                title: "Dedicated Support",
-                text: "Post-implementation assistance and scalable solutions as your business evolves",
+                title: "End-to-End Support",
+                text: "From design to deployment and beyond, we provide dedicated post-implementation support and scalable frameworks that evolve with your business.",
             },
             ].map((item, i) => (
             <motion.div
