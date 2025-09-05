@@ -105,7 +105,7 @@ export default function Home() {
               className={`absolute inset-0 w-full h-full object-cover hidden dark:block transition-opacity duration-500 ${videosLoaded ? 'opacity-100' : 'opacity-0'}`}
             >
               <source src="/videos/landing-page-hero-animation-dark-theme.webm" type="video/webm" />
-              <source src="animation-dark-theme.mp4" type="video/mp4" />
+              <source src="/videos/animation-dark-theme.mp4" type="video/mp4" />
             </video>
             {/* Overlay for better text readability */}
             <div className="absolute inset-0 bg-white/40 dark:bg-black/40"></div>
