@@ -88,7 +88,7 @@ export default function Home() {
               loop
               muted
               playsInline
-              preload="metadata"
+              preload="auto"
               className={`absolute inset-0 w-full h-full object-cover dark:hidden transition-opacity duration-500 ${videosLoaded ? 'opacity-100' : 'opacity-0'}`}
             >
               <source src="/videos/landing-page-hero-animation-light-theme.webm" type="video/webm" />
@@ -101,7 +101,7 @@ export default function Home() {
               loop
               muted
               playsInline
-              preload="metadata"
+              preload="auto"
               className={`absolute inset-0 w-full h-full object-cover hidden dark:block transition-opacity duration-500 ${videosLoaded ? 'opacity-100' : 'opacity-0'}`}
             >
               <source src="/videos/landing-page-hero-animation-dark-theme.webm" type="video/webm" />
