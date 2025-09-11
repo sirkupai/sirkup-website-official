@@ -61,8 +61,8 @@ export default function Solutions() {
             <div className="rounded-2xl bg-gray-100 dark:bg-zinc-900 overflow-hidden shadow-md p-6 hover:shadow-xl transition">
               <div className="border border-gray-300 dark:border-gray-700 rounded-2xl overflow-hidden mb-4">
                 <Image
-                  src="/images/header-image-left.jpg" // replace with your image
-                  alt="Social Media Marketing"
+                  src="/images/Human-Rights-Information.jpg" // replace with your image
+                  alt="Human-Rights-Information"
                   width={600}
                   height={400}
                   className="w-full h-48 object-cover"
@@ -95,8 +95,8 @@ export default function Solutions() {
               </div>
               <div className="border border-gray-300 dark:border-gray-700 rounded-2xl overflow-hidden mt-4">
               <Image
-                src="/images/Financial-services-main.jpg" // replace with your image
-                alt="Content Marketing"
+                src="/images/Complaints-Management-System.jpg" // replace with your image
+                alt="Complaints-Management-System"
                 width={600}
                 height={400}
                 className="w-full h-48 object-cover"
@@ -107,8 +107,8 @@ export default function Solutions() {
             <div className="rounded-2xl bg-gray-100 dark:bg-zinc-900 overflow-hidden shadow-md p-6 hover:shadow-xl transition">
               <div className="border border-gray-300 dark:border-gray-700 rounded-2xl overflow-hidden mb-4">
                 <Image
-                  src="/images/header-image-left.jpg" // replace with your image
-                  alt="Social Media Marketing"
+                  src="/images/MIS-for-gender-based-violence.jpg" // replace with your image
+                  alt="MIS-for-gender-based-violence"
                   width={600}
                   height={400}
                   className="w-full h-48 object-cover"
@@ -141,7 +141,7 @@ export default function Solutions() {
               </div>
               <div className="border border-gray-300 dark:border-gray-700 rounded-2xl overflow-hidden mt-4">
               <Image
-                src="/images/Financial-services-main.jpg" // replace with your image
+                src="/images/Helpline-1099.jpg" // replace with your image
                 alt="Content Marketing"
                 width={600}
                 height={400}
@@ -153,8 +153,8 @@ export default function Solutions() {
             <div className="rounded-2xl bg-gray-100 dark:bg-zinc-900 overflow-hidden shadow-md p-6 hover:shadow-xl transition">
               <div className="border border-gray-300 dark:border-gray-700 rounded-2xl overflow-hidden mb-4">
                 <Image
-                  src="/images/header-image-left.jpg" // replace with your image
-                  alt="Social Media Marketing"
+                  src="/images/Early-Warning-System.jpg" // replace with your image
+                  alt="Early-Warning-System"
                   width={600}
                   height={400}
                   className="w-full h-48 object-cover"
