@@ -61,8 +61,8 @@ export default function Solutions() {
             <div className="rounded-2xl bg-gray-100 dark:bg-zinc-900 overflow-hidden shadow-md p-6 hover:shadow-xl transition">
               <div className="border border-gray-300 dark:border-gray-700 rounded-2xl overflow-hidden mb-4">
                 <Image
-                  src="/images/header-image-left.jpg" // replace with your image
-                  alt="Social Media Marketing"
+                  src="/images/Human-Rights-Information.jpg" // replace with your image
+                  alt="Human-Rights-Information"
                   width={600}
                   height={400}
                   className="w-full h-48 object-cover"
@@ -75,7 +75,7 @@ export default function Solutions() {
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
                   Human Rights Information Management System for Ministry of Human Rights, Government of Pakistan and all the Provinces, funded by UNDP Pakistan
                 </p>
-                <Link href="#" className="text-black-500 dark:text-white font-medium inline-flex items-center gap-2">
+                <Link href="/projects/HRIMS" className="text-black-500 dark:text-white font-medium inline-flex items-center gap-2">
                   Learn more →
                 </Link>
               </div>
@@ -89,14 +89,14 @@ export default function Solutions() {
                 <p className="text-white mb-4">
                   Complaints Management System for National Commission for Human Rights (NCHR) through UNDP Pakistan
                 </p>
-                <Link href="#" className="text-white font-medium inline-flex items-center gap-2">
+                <Link href="/projects/CMS" className="text-white font-medium inline-flex items-center gap-2">
                   Learn more →
                 </Link>
               </div>
               <div className="border border-gray-300 dark:border-gray-700 rounded-2xl overflow-hidden mt-4">
               <Image
-                src="/images/Financial-services-main.jpg" // replace with your image
-                alt="Content Marketing"
+                src="/images/Complaints-Management-System.jpg" // replace with your image
+                alt="Complaints-Management-System"
                 width={600}
                 height={400}
                 className="w-full h-48 object-cover"
@@ -107,8 +107,8 @@ export default function Solutions() {
             <div className="rounded-2xl bg-gray-100 dark:bg-zinc-900 overflow-hidden shadow-md p-6 hover:shadow-xl transition">
               <div className="border border-gray-300 dark:border-gray-700 rounded-2xl overflow-hidden mb-4">
                 <Image
-                  src="/images/header-image-left.jpg" // replace with your image
-                  alt="Social Media Marketing"
+                  src="/images/MIS-for-gender-based-violence.jpg" // replace with your image
+                  alt="MIS-for-gender-based-violence"
                   width={600}
                   height={400}
                   className="w-full h-48 object-cover"
@@ -121,7 +121,7 @@ export default function Solutions() {
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
                   MIS for gender based violence Reporting and Redressal at the Punjab Women Protection Authority, Government of Punjab, Pakistan
                 </p>
-                <Link href="#" className="text-black-500 dark:text-white font-medium inline-flex items-center gap-2">
+                <Link href="/projects/MIS" className="text-black-500 dark:text-white font-medium inline-flex items-center gap-2">
                   Learn more →
                 </Link>
               </div>
@@ -135,13 +135,13 @@ export default function Solutions() {
                 <p className="text-white mb-4">
                   Helpline 1099, Ministry of Human Rights, Government of Pakistan through UN Women, Pakistan	
                 </p>
-                <Link href="#" className="text-white font-medium inline-flex items-center gap-2">
+                <Link href="/projects/Helpline1099" className="text-white font-medium inline-flex items-center gap-2">
                   Learn more →
                 </Link>
               </div>
               <div className="border border-gray-300 dark:border-gray-700 rounded-2xl overflow-hidden mt-4">
               <Image
-                src="/images/Financial-services-main.jpg" // replace with your image
+                src="/images/Helpline-1099.jpg" // replace with your image
                 alt="Content Marketing"
                 width={600}
                 height={400}
@@ -153,8 +153,8 @@ export default function Solutions() {
             <div className="rounded-2xl bg-gray-100 dark:bg-zinc-900 overflow-hidden shadow-md p-6 hover:shadow-xl transition">
               <div className="border border-gray-300 dark:border-gray-700 rounded-2xl overflow-hidden mb-4">
                 <Image
-                  src="/images/header-image-left.jpg" // replace with your image
-                  alt="Social Media Marketing"
+                  src="/images/Early-Warning-System.jpg" // replace with your image
+                  alt="Early-Warning-System"
                   width={600}
                   height={400}
                   className="w-full h-48 object-cover"
@@ -167,7 +167,7 @@ export default function Solutions() {
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
                   Early Warning System for reporting on Human Rights Violations – funded by Asia Foundation
                 </p>
-                <Link href="#" className="text-black-500 dark:text-white font-medium inline-flex items-center gap-2">
+                <Link href="/projects/EWS" className="text-black-500 dark:text-white font-medium inline-flex items-center gap-2">
                   Learn more →
                 </Link>
               </div>
@@ -179,15 +179,15 @@ export default function Solutions() {
                   AdvoLocate App
                 </h3>
                 <p className="text-white mb-4">
-                  AdvoLocate App (non-functional)
+                  Advolocate is designed as a breakthrough innovation for marginalized groups 
                 </p>
-                <Link href="#" className="text-white font-medium inline-flex items-center gap-2">
+                <Link href="/projects/AdvoLocate" className="text-white font-medium inline-flex items-center gap-2">
                   Learn more →
                 </Link>
               </div>
               <div className="border border-gray-300 dark:border-gray-700 rounded-2xl overflow-hidden mt-4">
               <Image
-                src="/images/Financial-services-main.jpg" // replace with your image
+                src="/images/Advolocate.jpg" // replace with your image
                 alt="Content Marketing"
                 width={600}
                 height={400}

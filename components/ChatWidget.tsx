@@ -1,81 +1,110 @@
-"use client"
+"use client";
 
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect, useRef } from "react";
 
 export default function SirkupAIWidget() {
-  const [input, setInput] = useState("")
-  const [isFocused, setIsFocused] = useState(false)
-  const [response, setResponse] = useState<string | null>(null)
-  const [loading, setLoading] = useState(false)
-  const [hideWidget, setHideWidget] = useState(false)
-  const chatBoxRef = useRef<HTMLDivElement | null>(null) // only wrap the box
+  const [input, setInput] = useState("");
+  const [isFocused, setIsFocused] = useState(false);
+  const [response, setResponse] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [hideWidget, setHideWidget] = useState(false);
+  const chatBoxRef = useRef<HTMLDivElement | null>(null); // only wrap the box
 
-  // 🛠️ Clean iframe-wrapped responses
+  // 🧼 Clean iframe-wrapped responses + basic entity unescape
   const sanitizeResponse = (html: string) => {
-    const iframeMatch = html.match(/<iframe[^>]*srcdoc="([^"]*)"/)
-    if (iframeMatch) {
-      return iframeMatch[1] // extract only srcdoc content
-    }
-    return html
-  }
+    // If the server returns an iframe with srcdoc="...":
+    const iframeMatch = html.match(/<iframe[^>]*srcdoc="([^"]*)"/i);
+    const inner = iframeMatch ? iframeMatch[1] : html;
 
+    // Unescape a few common entities (upstreams often escape srcdoc/html)
+    return inner
+      .replace(/&lt;/g, "<")
+      .replace(/&gt;/g, ">")
+      .replace(/&amp;/g, "&")
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'");
+  };
+
+  // 🚀 Submit with timeout + rich error reporting
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!input.trim()) return
+    e.preventDefault();
+    const q = input.trim();
+    if (!q) return;
 
-    setLoading(true)
-    setResponse(null)
+    setLoading(true);
+    setResponse(null);
+
+    // 12s client timeout (separate from server’s)
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 12_000);
 
     try {
-      const res = await fetch(
-        `https://primary-production-2d7fc.up.railway.app/webhook/788f1992-96ea-4c39-8a16-ba0ecb53ce0e?query=${encodeURIComponent(
-          input
-        )}`
-      )
+      const res = await fetch("/api/sirkup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "text/html,application/json" },
+        body: JSON.stringify({ query: q }),
+        signal: controller.signal,
+      });
 
-      if (!res.ok) throw new Error(`Network response was not ok: ${res.status}`)
+      const raw = await res.text(); // read once
 
-      const text = await res.text()
-      setResponse(sanitizeResponse(text))
-    } catch (error) {
-      console.error("Error fetching response:", error)
-      setResponse("⚠️ Error sending request.")
+      if (!res.ok) {
+        // Try to parse our API's JSON error shape for helpful details
+        let reason = "";
+        try {
+          const j = JSON.parse(raw);
+          reason = j?.error
+            ? `${j.error}${j.status ? ` (status ${j.status})` : ""}`
+            : raw.slice(0, 300);
+        } catch {
+          reason = raw.slice(0, 300) || `HTTP ${res.status}`;
+        }
+        console.error("/api/sirkup error", res.status, raw);
+        setResponse(`⚠️ Request failed: ${reason}`);
+        return; // keep input so user can tweak and retry
+      }
+
+      setResponse(sanitizeResponse(raw));
+      setInput(""); // only clear on success
+    } catch (err: any) {
+      if (err?.name === "AbortError") {
+        setResponse("⚠️ Request timed out. Please try again.");
+      } else {
+        console.error("Network/JS error:", err);
+        setResponse("⚠️ Network error. Check your connection or try again.");
+      }
     } finally {
-      setLoading(false)
-      setInput("")
+      clearTimeout(timer);
+      setLoading(false);
     }
-  }
+  };
 
-  // 🛠️ Hide widget near footer
+  // 🫥 Hide widget when near the footer
   useEffect(() => {
     const handleScroll = () => {
-      const footer = document.querySelector("footer")
-      if (!footer) return
+      const footer = document.querySelector("footer");
+      if (!footer) return;
+      const footerTop = footer.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      setHideWidget(footerTop < windowHeight + 150);
+    };
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-      const footerTop = footer.getBoundingClientRect().top
-      const windowHeight = window.innerHeight
-
-      setHideWidget(footerTop < windowHeight + 150)
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    handleScroll()
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
-  // 🛠️ Collapse when clicking outside
+  // 🧊 Collapse if clicking outside the chat box
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (chatBoxRef.current && !chatBoxRef.current.contains(e.target as Node)) {
-        setResponse(null) // clear response
-        setIsFocused(false) // shrink input
-        setInput("") // also clear input
+        setResponse(null); // clear response
+        setIsFocused(false); // shrink input
+        setInput(""); // also clear input
       }
-    }
-
-    document.addEventListener("mousedown", handleClickOutside)
-    return () => document.removeEventListener("mousedown", handleClickOutside)
-  }, [])
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <div
@@ -134,13 +163,10 @@ export default function SirkupAIWidget() {
                        text-gray-900 dark:text-gray-100 text-sm shadow-md transition-all duration-300 
                        max-h-[400px] overflow-y-auto"
           >
-            <div
-              className="prose prose-sm dark:prose-invert"
-              dangerouslySetInnerHTML={{ __html: response }}
-            />
+            <div className="prose prose-sm dark:prose-invert" dangerouslySetInnerHTML={{ __html: response }} />
           </div>
         )}
       </div>
     </div>
-  )
+  );
 }
