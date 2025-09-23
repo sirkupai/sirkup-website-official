@@ -1,66 +1,57 @@
 import { NextRequest, NextResponse } from "next/server";
 
-export const runtime = "nodejs";            // ensure server (not edge) so env is available
-export const dynamic = "force-dynamic";     // disable caching for this route
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
+
+function J(status: number, data: unknown) {
+  return NextResponse.json(data, { status });
+}
 
 export async function POST(req: NextRequest) {
-  // 1) Parse JSON body
+  // accept POST from browser, forward to upstream as GET ?query=
   let body: { query?: string } = {};
-  try {
-    body = await req.json();
-  } catch {
-    return NextResponse.json({ error: "Bad JSON body" }, { status: 400 });
-  }
-  const query = (body.query ?? "").trim();
-  if (!query) {
-    return NextResponse.json({ error: "Missing 'query' string" }, { status: 400 });
-  }
+  try { body = await req.json(); } catch { return J(400, { error: "Bad JSON body" }); }
 
-  // 2) Env check
-  const upstreamBase = process.env.SIRKUP_WEBHOOK_URL;
-  if (!upstreamBase) {
-    // This is most likely your 500. Set SIRKUP_WEBHOOK_URL in .env.local and in your hosting env.
-    return NextResponse.json({ error: "Server not configured (SIRKUP_WEBHOOK_URL missing)" }, { status: 500 });
-  }
+  const query = String(body?.query ?? "").trim();
+  if (!query) return J(400, { error: "Missing 'query' string" });
 
-  // 3) Build upstream URL with query
-  const url = new URL(upstreamBase);
+  const base = process.env.SIRKUP_WEBHOOK_URL;
+  if (!base) return J(500, { error: "Server not configured (SIRKUP_WEBHOOK_URL missing)" });
+
+  const url = new URL(base);
   url.searchParams.set("query", query);
 
-  // 4) Timeout
   const controller = new AbortController();
-  const timeoutMs = 10_000;
-  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+  const timeout = setTimeout(() => controller.abort(), 12_000);
 
   try {
     const upstream = await fetch(url.toString(), {
       method: "GET",
       headers: {
-        // add auth headers from env here if you need them:
-        // Authorization: `Bearer ${process.env.SIRKUP_API_KEY}`,
         Accept: "text/html, application/json;q=0.9, */*;q=0.8",
+        // If your upstream needs an API key, add an Authorization header here.
+        // Authorization: `Bearer ${process.env.SIRKUP_API_KEY}`,
       },
       cache: "no-store",
       signal: controller.signal,
     });
 
-    const contentType = upstream.headers.get("content-type") ?? "text/html; charset=utf-8";
+    const ct = upstream.headers.get("content-type") ?? "text/html; charset=utf-8";
     const text = await upstream.text();
-
     clearTimeout(timeout);
 
-    // Pass upstream status & content type through
-    return new NextResponse(text, {
-      status: upstream.status,
-      headers: { "Content-Type": contentType },
-    });
+    if (!upstream.ok) {
+      if (process.env.NODE_ENV !== "production") {
+        return J(502, { error: "Upstream error", status: upstream.status, body: text.slice(0, 1000) });
+      }
+      return J(502, { error: "Upstream error" });
+    }
+
+    return new NextResponse(text, { status: 200, headers: { "Content-Type": ct } });
   } catch (err: any) {
     clearTimeout(timeout);
-    if (err?.name === "AbortError") {
-      return NextResponse.json({ error: `Upstream timeout after ${timeoutMs}ms` }, { status: 504 });
-    }
-    // Log server-side for debugging
+    if (err?.name === "AbortError") return J(504, { error: "Upstream timeout (12s)" });
     console.error("Upstream fetch failed:", err);
-    return NextResponse.json({ error: "Upstream error" }, { status: 502 });
+    return J(502, { error: "Upstream fetch failed" });
   }
 }

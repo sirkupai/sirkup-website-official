@@ -57,7 +57,7 @@ export default function SalesMarketingPage() {
             <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 mb-6 md:mb-8 max-w-3xl mx-auto px-4">
               SirkupAI is a digital innovation studio specializing in AI-powered enterprise solutions, educational technology, and social impact initiatives.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Card 1 */}
                 <div className="bg-gray-100 dark:bg-zinc-900 rounded-2xl shadow-md p-6 text-center hover:shadow-lg transition">
                     <div className="flex justify-center items-center mb-4">
@@ -89,19 +89,6 @@ export default function SalesMarketingPage() {
                     <p className="text-gray-600 dark:text-gray-300">privacy@sirkup.ai</p>
                 </div>
 
-                {/* Card 3 */}
-                <div className="bg-gray-100 dark:bg-zinc-900 rounded-2xl shadow-md p-6 text-center hover:shadow-lg transition">
-                    <div className="flex justify-center items-center mb-4">
-                    <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-                        {/* User Icon */}
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary dark:text-primary-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.121 17.804A9 9 0 1119.879 17.8M12 7a4 4 0 100 8 4 4 0 000-8z" />
-                        </svg>
-                    </div>
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Data Protection Officer</h3>
-                    <p className="text-gray-600 dark:text-gray-300">[Insert DPO contact if appointed]</p>
-                </div>
             </div>
 
         </div>
@@ -206,37 +193,7 @@ export default function SalesMarketingPage() {
             <div className="w-1/2"></div>
             </div>
 
-            {/* Cookies & Tracking (Right) */}
-            <div className="flex justify-end w-full">
-            <div className="w-1/2"></div>
-            <div className="w-1/2 pl-8 relative">
-                <span className="absolute left-[-14px] top-1 flex items-center justify-center w-7 h-7 rounded-full bg-primary text-white dark:bg-zinc-900">
-                {/* Cookie Icon */}
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-4 h-4"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                >
-                    <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M20 12a8 8 0 11-8-8 4 4 0 008 8zm-4 8a8 8 0 110-16 4 4 0 010 8z"
-                    />
-                </svg>
-                </span>
-                <h3 className="text-lg font-semibold text-black dark:text-white">Cookies & Tracking</h3>
-                <p className="text-gray-700 dark:text-gray-300">
-                See our{" "}
-                <a href="/cookie-policy" className="text-primary underline text-black dark:text-white">
-                    Cookie Policy
-                </a>{" "}
-                for details.
-                </p>
-            </div>
-            </div>
+           
         </div>
         </section>
         <section ref={addSectionRef} className="relative pt-10 pb-20 px-4 md:px-8 text-center opacity-0">

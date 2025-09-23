@@ -49,7 +49,7 @@ const Sidebar = ({ isCollapsed, isHidden = false, isMobile = false, onToggle }: 
   const navigation = [
     { name: 'Home', href: '/' },
     { name: 'Solutions', href: '/solutions' },
-     { name: 'SirkupAi Vision', href: '/explore-sirkupAi' },
+     { name: 'SirkupAI Vision', href: '/explore-sirkupAi' },
     { name: 'Team', href: '/team' },
     { name: 'Contact', href: '/contact' },
   ]
