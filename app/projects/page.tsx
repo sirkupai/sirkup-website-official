@@ -75,7 +75,7 @@ export default function Solutions() {
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
                   Human Rights Information Management System for Ministry of Human Rights, Government of Pakistan and all the Provinces, funded by UNDP Pakistan
                 </p>
-                <Link href="#" className="text-black-500 dark:text-white font-medium inline-flex items-center gap-2">
+                <Link href="/projects/HRIMS" className="text-black-500 dark:text-white font-medium inline-flex items-center gap-2">
                   Learn more →
                 </Link>
               </div>
@@ -89,7 +89,7 @@ export default function Solutions() {
                 <p className="text-white mb-4">
                   Complaints Management System for National Commission for Human Rights (NCHR) through UNDP Pakistan
                 </p>
-                <Link href="#" className="text-white font-medium inline-flex items-center gap-2">
+                <Link href="/projects/CMS" className="text-white font-medium inline-flex items-center gap-2">
                   Learn more →
                 </Link>
               </div>
@@ -121,7 +121,7 @@ export default function Solutions() {
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
                   MIS for gender based violence Reporting and Redressal at the Punjab Women Protection Authority, Government of Punjab, Pakistan
                 </p>
-                <Link href="#" className="text-black-500 dark:text-white font-medium inline-flex items-center gap-2">
+                <Link href="/projects/MIS" className="text-black-500 dark:text-white font-medium inline-flex items-center gap-2">
                   Learn more →
                 </Link>
               </div>
@@ -135,7 +135,7 @@ export default function Solutions() {
                 <p className="text-white mb-4">
                   Helpline 1099, Ministry of Human Rights, Government of Pakistan through UN Women, Pakistan	
                 </p>
-                <Link href="#" className="text-white font-medium inline-flex items-center gap-2">
+                <Link href="/projects/Helpline1099" className="text-white font-medium inline-flex items-center gap-2">
                   Learn more →
                 </Link>
               </div>
@@ -167,7 +167,7 @@ export default function Solutions() {
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
                   Early Warning System for reporting on Human Rights Violations – funded by Asia Foundation
                 </p>
-                <Link href="#" className="text-black-500 dark:text-white font-medium inline-flex items-center gap-2">
+                <Link href="/projects/EWS" className="text-black-500 dark:text-white font-medium inline-flex items-center gap-2">
                   Learn more →
                 </Link>
               </div>
@@ -179,15 +179,15 @@ export default function Solutions() {
                   AdvoLocate App
                 </h3>
                 <p className="text-white mb-4">
-                  AdvoLocate App (non-functional)
+                  Advolocate is designed as a breakthrough innovation for marginalized groups 
                 </p>
-                <Link href="#" className="text-white font-medium inline-flex items-center gap-2">
+                <Link href="/projects/AdvoLocate" className="text-white font-medium inline-flex items-center gap-2">
                   Learn more →
                 </Link>
               </div>
               <div className="border border-gray-300 dark:border-gray-700 rounded-2xl overflow-hidden mt-4">
               <Image
-                src="/images/Financial-services-main.jpg" // replace with your image
+                src="/images/Advolocate.jpg" // replace with your image
                 alt="Content Marketing"
                 width={600}
                 height={400}

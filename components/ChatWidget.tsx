@@ -27,12 +27,11 @@ export default function SirkupAIWidget() {
     setResponse(null)
 
     try {
-      const res = await fetch(
-        `https://primary-production-2d7fc.up.railway.app/webhook/788f1992-96ea-4c39-8a16-ba0ecb53ce0e?query=${encodeURIComponent(
-          input
-        )}`
-      )
-
+        const res = await fetch("/api/sirkup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query: input }),
+      });
       if (!res.ok) throw new Error(`Network response was not ok: ${res.status}`)
 
       const text = await res.text()

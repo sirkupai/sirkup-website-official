@@ -151,7 +151,7 @@ export default function SalesMarketingPage() {
               Unlock the power of AI art, it starts with a quick sign up.
             </h2>
             <Image
-            src="/images/SignUp-SignIn.png"
+            src="/images/SignUp-SignInnew.png"
             alt="SignUp-SignIn"
             className="object-contain rounded-lg"
             width={1200}
@@ -163,7 +163,7 @@ export default function SalesMarketingPage() {
               From words to visuals, just enter your prompt.
             </h2>
             <Image
-            src="/images/Generated-Image.png"
+            src="/images/Generated-Imagenew.png"
             alt="Generated-Image"
             className="object-contain rounded-lg"
             width={1200}
@@ -175,7 +175,7 @@ export default function SalesMarketingPage() {
               Edit any image to match your vision.
             </h2>
             <Image
-            src="/images/Edit-Image.png"
+            src="/images/Edit-Imagenew.png"
             alt="Edit-Image"
             className="object-contain rounded-lg"
             width={1200}
