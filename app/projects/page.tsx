@@ -59,7 +59,7 @@ export default function Solutions() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {/* Card 1 */}
             <div className="rounded-2xl bg-gray-100 dark:bg-zinc-900 overflow-hidden shadow-md p-6 hover:shadow-xl transition">
-              <div className="border border-gray-300 dark:border-gray-700 rounded-2xl overflow-hidden mb-4">
+              {/* <div className="border border-gray-300 dark:border-gray-700 rounded-2xl overflow-hidden mb-4">
                 <Image
                   src="/images/Human-Rights-Information.jpg" // replace with your image
                   alt="Human-Rights-Information"
@@ -67,7 +67,7 @@ export default function Solutions() {
                   height={400}
                   className="w-full h-48 object-cover"
                 />
-              </div>
+              </div>*/}
               <div className="border border-gray-300 dark:border-gray-700 rounded-2xl p-6">
                 <h3 className="text-xl font-semibold mb-3 text-black dark:text-white">
                   HRIMS
@@ -86,14 +86,14 @@ export default function Solutions() {
                 <h3 className="text-xl font-semibold mb-3 text-white">
                   CMS for NCHR
                 </h3>
-                <p className="text-white mb-4">
+                <p className="text-gray-600 dark:text-gray-400 mb-4">
                   Complaints Management System for National Commission for Human Rights (NCHR) through UNDP Pakistan
                 </p>
                 <Link href="/projects/CMS" className="text-white font-medium inline-flex items-center gap-2">
                   Learn more →
                 </Link>
               </div>
-              <div className="border border-gray-300 dark:border-gray-700 rounded-2xl overflow-hidden mt-4">
+               {/* <div className="border border-gray-300 dark:border-gray-700 rounded-2xl overflow-hidden mt-4">
               <Image
                 src="/images/Complaints-Management-System.jpg" // replace with your image
                 alt="Complaints-Management-System"
@@ -101,11 +101,11 @@ export default function Solutions() {
                 height={400}
                 className="w-full h-48 object-cover"
               />
-              </div>
+              </div>*/}
             </div>
             {/* Card 3 */}
             <div className="rounded-2xl bg-gray-100 dark:bg-zinc-900 overflow-hidden shadow-md p-6 hover:shadow-xl transition">
-              <div className="border border-gray-300 dark:border-gray-700 rounded-2xl overflow-hidden mb-4">
+               {/*<div className="border border-gray-300 dark:border-gray-700 rounded-2xl overflow-hidden mb-4">
                 <Image
                   src="/images/MIS-for-gender-based-violence.jpg" // replace with your image
                   alt="MIS-for-gender-based-violence"
@@ -113,7 +113,7 @@ export default function Solutions() {
                   height={400}
                   className="w-full h-48 object-cover"
                 />
-              </div>
+              </div>*/}
               <div className="border border-gray-300 dark:border-gray-700 rounded-2xl p-6">
                 <h3 className="text-xl font-semibold mb-3 text-black dark:text-white">
                   MIS for Gender Based Violence
@@ -132,14 +132,14 @@ export default function Solutions() {
                 <h3 className="text-xl font-semibold mb-3 text-white">
                   Helpline 1099
                 </h3>
-                <p className="text-white mb-4">
+                <p className="text-gray-600 dark:text-gray-400 mb-4">
                   Helpline 1099, Ministry of Human Rights, Government of Pakistan through UN Women, Pakistan	
                 </p>
                 <Link href="/projects/Helpline1099" className="text-white font-medium inline-flex items-center gap-2">
                   Learn more →
                 </Link>
               </div>
-              <div className="border border-gray-300 dark:border-gray-700 rounded-2xl overflow-hidden mt-4">
+              {/*<div className="border border-gray-300 dark:border-gray-700 rounded-2xl overflow-hidden mt-4">
               <Image
                 src="/images/Helpline-1099.jpg" // replace with your image
                 alt="Content Marketing"
@@ -147,11 +147,11 @@ export default function Solutions() {
                 height={400}
                 className="w-full h-48 object-cover"
               />
-              </div>
+              </div>*/}
             </div>
             {/* Card 5 */}
             <div className="rounded-2xl bg-gray-100 dark:bg-zinc-900 overflow-hidden shadow-md p-6 hover:shadow-xl transition">
-              <div className="border border-gray-300 dark:border-gray-700 rounded-2xl overflow-hidden mb-4">
+              {/* <div className="border border-gray-300 dark:border-gray-700 rounded-2xl overflow-hidden mb-4">
                 <Image
                   src="/images/Early-Warning-System.jpg" // replace with your image
                   alt="Early-Warning-System"
@@ -159,7 +159,7 @@ export default function Solutions() {
                   height={400}
                   className="w-full h-48 object-cover"
                 />
-              </div>
+              </div>*/}
               <div className="border border-gray-300 dark:border-gray-700 rounded-2xl p-6">
                 <h3 className="text-xl font-semibold mb-3 text-black dark:text-white">
                   Early Warning System
@@ -178,14 +178,14 @@ export default function Solutions() {
                 <h3 className="text-xl font-semibold mb-3 text-white">
                   AdvoLocate App
                 </h3>
-                <p className="text-white mb-4">
+                <p className="text-gray-600 dark:text-gray-400 mb-4">
                   Advolocate is designed as a breakthrough innovation for marginalized groups 
                 </p>
                 <Link href="/projects/AdvoLocate" className="text-white font-medium inline-flex items-center gap-2">
                   Learn more →
                 </Link>
               </div>
-              <div className="border border-gray-300 dark:border-gray-700 rounded-2xl overflow-hidden mt-4">
+               {/*<div className="border border-gray-300 dark:border-gray-700 rounded-2xl overflow-hidden mt-4">
               <Image
                 src="/images/Advolocate.jpg" // replace with your image
                 alt="Content Marketing"
@@ -193,7 +193,7 @@ export default function Solutions() {
                 height={400}
                 className="w-full h-48 object-cover"
               />
-              </div>
+              </div>*/}
             </div>
           </div>
         </section>
