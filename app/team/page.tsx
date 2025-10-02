@@ -37,7 +37,7 @@ const teamMembers = {
     },
     {
       name: 'Raja Bilal',
-      title: 'Head of Recovery Department',
+      title: 'Financial Manager',
       linkedin: "#",
     },
   ],
@@ -94,7 +94,7 @@ const teamMembers = {
     },
     {
       name: 'Muskan Iqbal',
-      title: 'Associate Front-End Developer',
+      title: 'Junior Front-End Developer',
       linkedin: "https://www.linkedin.com/in/muskan-yousafzai-iqbal/",
     },
     {
